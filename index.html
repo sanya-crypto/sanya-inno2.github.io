@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แอปการเรียนรู้ ปุ๋ยหมักแบบไม่พลิกกองในวงตาข่าย</title>
+    <style>
+        :root {
+            --color-white: rgba(255, 255, 255, 1);
+            --color-cream-50: rgba(252, 252, 249, 1);
+            --color-cream-100: rgba(255, 255, 253, 1);
+            --color-gray-300: rgba(167, 169, 169, 1);
+            --color-gray-400: rgba(119, 124, 124, 1);
+            --color-slate-500: rgba(98, 108, 113, 1);
+            --color-slate-900: rgba(19, 52, 59, 1);
+            --color-teal-500: rgba(33, 128, 141, 1);
+            --color-teal-600: rgba(29, 116, 128, 1);
+            --color-teal-700: rgba(26, 104, 115, 1);
+            --color-orange-400: rgba(230, 129, 97, 1);
+            --color-red-400: rgba(255, 84, 89, 1);
+            --color-brown-600: rgba(94, 82, 64, 1);
+            
+            --color-background: var(--color-cream-50);
+            --color-surface: var(--color-cream-100);
+            --color-text: var(--color-slate-900);
+            --color-text-secondary: var(--color-slate-500);
+            --color-primary: var(--color-teal-500);
+            --color-primary-hover: var(--color-teal-600);
+            --color-border: rgba(94, 82, 64, 0.2);
+            --color-success: var(--color-teal-500);
+            --color-warning: var(--color-orange-400);
+            --color-error: var(--color-red-400);
+            
+            --space-8: 8px;
+            --space-12: 12px;
+            --space-16: 16px;
+            --space-20: 20px;
+            --space-24: 24px;
+            --space-32: 32px;
+            --radius-base: 8px;
+            --radius-lg: 12px;
+        }
+        
+        * { box-sizing: border-box; }
+        
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--color-background);
+            color: var(--color-text);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-16);
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--color-teal-500), var(--color-teal-700));
+            color: white;
+            padding: var(--space-24);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-24);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        
+        header p {
+            margin: var(--space-8) 0 0 0;
+            opacity: 0.95;
+            font-size: 14px;
+        }
+        
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            gap: var(--space-12);
+            margin-bottom: var(--space-24);
+            border-bottom: 2px solid var(--color-border);
+            flex-wrap: wrap;
+        }
+        
+        .nav-tab {
+            padding: var(--space-12) var(--space-20);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            color: var(--color-text-secondary);
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .nav-tab:hover {
+            color: var(--color-primary);
+        }
+        
+        .nav-tab.active {
+            color: var(--color-primary);
+            border-bottom-color: var(--color-primary);
+        }
+        
+        .content-section {
+            display: none;
+        }
+        
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Cards */
+        .card {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            padding: var(--space-20);
+            margin-bottom: var(--space-20);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .card h2 {
+            margin: 0 0 var(--space-16) 0;
+            font-size: 20px;
+            color: var(--color-teal-600);
+        }
+        
+        .card h3 {
+            margin: var(--space-20) 0 var(--space-12) 0;
+            font-size: 16px;
+            color: var(--color-text);
+        }
+        
+        .card p, .card li {
+            line-height: 1.6;
+            margin: var(--space-8) 0;
+            color: var(--color-text-secondary);
+        }
+        
+        .card ul {
+            padding-left: var(--space-24);
+        }
+        
+        /* Video Container */
+        .video-container {
+            margin: var(--space-16) 0;
+            border-radius: var(--radius-base);
+            overflow: hidden;
+            background: #000;
+        }
+        
+        .video-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+        
+        /* Login Form */
+        .login-form {
+            max-width: 400px;
+            margin: var(--space-32) auto;
+        }
+        
+        .form-group {
+            margin-bottom: var(--space-16);
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: var(--space-8);
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: var(--space-12);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-base);
+            font-size: 14px;
+            font-family: inherit;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(33, 128, 141, 0.1);
+        }
+        
+        /* Buttons */
+        .btn {
+            padding: var(--space-12) var(--space-20);
+            border: none;
+            border-radius: var(--radius-base);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: var(--color-primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--color-primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(33, 128, 141, 0.3);
+        }
+        
+        .btn-secondary {
+            background: rgba(94, 82, 64, 0.1);
+            color: var(--color-brown-600);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(94, 82, 64, 0.15);
+        }
+        
+        .btn-success {
+            background: var(--color-success);
+            color: white;
+        }
+        
+        .btn-small {
+            padding: var(--space-8) var(--space-16);
+            font-size: 13px;
+        }
+        
+        /* Activity Tracking */
+        .activity-item {
+            background: rgba(33, 128, 141, 0.05);
+            padding: var(--space-16);
+            margin: var(--space-12) 0;
+            border-radius: var(--radius-base);
+            border-left: 4px solid var(--color-primary);
+        }
+        
+        .activity-item.completed {
+            background: rgba(33, 128, 141, 0.15);
+            border-left-color: var(--color-success);
+        }
+        
+        .activity-title {
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: var(--space-4);
+        }
+        
+        .activity-date {
+            font-size: 12px;
+            color: var(--color-text-secondary);
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(94, 82, 64, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: var(--space-16) 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: var(--color-primary);
+            border-radius: 4px;
+            transition: width 0.3s;
+        }
+        
+        /* Quiz Questions */
+        .quiz-question {
+            margin: var(--space-24) 0;
+            padding: var(--space-16);
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: var(--radius-base);
+        }
+        
+        .quiz-question-text {
+            font-weight: 600;
+            margin-bottom: var(--space-12);
+            color: var(--color-text);
+        }
+        
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-12);
+        }
+        
+        .quiz-option {
+            padding: var(--space-12);
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-base);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .quiz-option:hover {
+            background: rgba(33, 128, 141, 0.05);
+            border-color: var(--color-primary);
+        }
+        
+        .quiz-option input {
+            margin-right: var(--space-12);
+        }
+        
+        .quiz-option.selected {
+            background: rgba(33, 128, 141, 0.1);
+            border-color: var(--color-primary);
+        }
+        
+        .quiz-option.correct {
+            background: rgba(33, 128, 141, 0.2);
+            border-color: var(--color-success);
+        }
+        
+        .quiz-option.incorrect {
+            background: rgba(255, 84, 89, 0.1);
+            border-color: var(--color-error);
+        }
+        
+        /* Results Summary */
+        .results-summary {
+            background: linear-gradient(135deg, rgba(33, 128, 141, 0.1), rgba(230, 129, 97, 0.1));
+            padding: var(--space-24);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            margin: var(--space-24) 0;
+        }
+        
+        .score-display {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin: var(--space-16) 0;
+        }
+        
+        .grade-badge {
+            display: inline-block;
+            padding: var(--space-12) var(--space-24);
+            background: var(--color-primary);
+            color: white;
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            margin-top: var(--space-16);
+        }
+        
+        .grade-badge.excellent {
+            background: var(--color-success);
+        }
+        
+        .grade-badge.good {
+            background: var(--color-primary);
+        }
+        
+        .grade-badge.fair {
+            background: var(--color-warning);
+        }
+        
+        .grade-badge.poor {
+            background: var(--color-error);
+        }
+        
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-16);
+            margin: var(--space-20) 0;
+        }
+        
+        .grid-item {
+            background: var(--color-surface);
+            padding: var(--space-16);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+        }
+        
+        .grid-item h3 {
+            margin-top: 0;
+            color: var(--color-teal-600);
+        }
+        
+        /* Dashboard */
+        .dashboard-stat {
+            background: linear-gradient(135deg, var(--color-teal-500), var(--color-teal-600));
+            color: white;
+            padding: var(--space-20);
+            border-radius: var(--radius-lg);
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            margin: var(--space-12) 0;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        /* Alerts */
+        .alert {
+            padding: var(--space-16);
+            border-radius: var(--radius-base);
+            margin: var(--space-16) 0;
+        }
+        
+        .alert-success {
+            background: rgba(33, 128, 141, 0.1);
+            border-left: 4px solid var(--color-success);
+            color: var(--color-success);
+        }
+        
+        .alert-info {
+            background: rgba(33, 128, 141, 0.1);
+            border-left: 4px solid var(--color-primary);
+            color: var(--color-primary);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: var(--color-surface);
+            padding: var(--space-24);
+            border-radius: var(--radius-lg);
+            max-width: 600px;
+            width: 95%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-16);
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--color-text-secondary);
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 22px;
+            }
+            
+            .nav-tabs {
+                gap: var(--space-8);
+            }
+            
+            .nav-tab {
+                padding: var(--space-8) var(--space-12);
+                font-size: 13px;
+            }
+            
+            .video-container iframe {
+                height: 250px;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌱 การเรียนรู้ปุ๋ยหมักแบบไม่พลิกกองในวงตาข่าย</h1>
+            <p>วิศวกรรมแม่โจ้ 1 - เปลี่ยนขยะเป็นทอง</p>
+        </header>
+        
+        <!-- Login Section (Initially shown) -->
+        <div id="loginSection" class="card login-form">
+            <h2 style="text-align: center; margin-top: 0;">ลงชื่อเข้าใช้งาน</h2>
+            <div class="form-group">
+                <label class="form-label">ชื่อ - นามสกุล</label>
+                <input type="text" id="fullName" class="form-control" placeholder="เช่น สมชาย ใจดี">
+            </div>
+            <div class="form-group">
+                <label class="form-label">เลขที่นักเรียน</label>
+                <input type="text" id="studentId" class="form-control" placeholder="เช่น ม.1/01">
+            </div>
+            <div class="form-group">
+                <label class="form-label">ชั้นเรียน</label>
+                <input type="text" id="className" class="form-control" placeholder="เช่น ม.1/12">
+            </div>
+            <button class="btn btn-primary" style="width: 100%; margin-top: var(--space-16);" onclick="loginUser()">
+                เข้าสู่ระบบ
+            </button>
+        </div>
+        
+        <!-- Main App (Hidden until login) -->
+        <div id="appSection" style="display: none;">
+            <!-- User Info -->
+            <div class="card" style="background: linear-gradient(135deg, rgba(33, 128, 141, 0.1), rgba(230, 129, 97, 0.1));">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-16);">
+                    <div>
+                        <p style="margin: 0; color: var(--color-text-secondary); font-size: 14px;">ยินดีต้อนรับ</p>
+                        <h2 id="userDisplayName" style="margin: var(--space-8) 0; color: var(--color-teal-600);"></h2>
+                        <p id="userInfo" style="margin: var(--space-4) 0; color: var(--color-text-secondary); font-size: 14px;"></p>
+                    </div>
+                    <button class="btn btn-secondary btn-small" onclick="logout()">ออกจากระบบ</button>
+                </div>
+            </div>
+            
+            <!-- Navigation Tabs -->
+            <div class="nav-tabs">
+                <button class="nav-tab active" onclick="switchTab('knowledge')">📚 ใบความรู้</button>
+                <button class="nav-tab" onclick="switchTab('video')">🎥 วีดิโอการสอน</button>
+                <button class="nav-tab" onclick="switchTab('activity')">✏️ ใบกิจกรรม</button>
+                <button class="nav-tab" onclick="switchTab('exercise')">📝 แบบฝึกหัด</button>
+                <button class="nav-tab" onclick="switchTab('quiz')">📋 แบบทดสอบ</button>
+                <button class="nav-tab" onclick="switchTab('dashboard')">📊 ผลการประเมิน</button>
+            </div>
+            
+            <!-- Knowledge Section -->
+            <div id="knowledge" class="content-section active">
+                <div class="card">
+                    <h2>📚 ใบความรู้: ปุ๋ยหมักแบบไม่พลิกกองในวงตาข่าย</h2>
+                    
+                    <h3>🎯 แนวคิดพื้นฐาน</h3>
+                    <p>ปุ๋ยหมักแบบไม่พลิกกอง "วิศวกรรมแม่โจ้ 1" คือการทำปุ๋ยอินทรีย์โดยใช้หลักการระบายอากาศในกองหมัก ทำให้ไม่ต้องพลิกกลับกองบ่อยครั้ง ทำให้ประหยัดแรงงาน เวลา และต้นทุน</p>
+                    
+                    <h3>💡 หลักการทำงาน</h3>
+                    <ul>
+                        <li><strong>การย่อยสลายแบบใช้ออกซิเจน (Aerobic Decomposition):</strong> จุลินทรีย์ใช้ออกซิเจนในการย่อยสลายวัสดุอินทรีย์</li>
+                        <li><strong>การพาความร้อนแบบปล่องไฟ (Chimney Convection):</strong> ความร้อนที่เกิดจากการย่อยสลายทำให้อากาศหมุนเวียนในกองโดยธรรมชาติ</li>
+                        <li><strong>ไม่ต้องกลับกอง:</strong> เนื่องจากมีอากาศไหลเวียนเพียงพอเอง</li>
+                    </ul>
+                    
+                    <h3>📦 วัตถุดิบและสูตร</h3>
+                    <ul>
+                        <li><strong>เศษพืช:</strong> ฟางข้าว ซังข้าวโพด ใบไม้ แต่ฝ ตะกอน (ประมาณ 4 ส่วน)</li>
+                        <li><strong>มูลสัตว์:</strong> ขี้วัว ขี้ม้า ขี้เป็ด (ประมาณ 1 ส่วน)</li>
+                        <li><strong>น้ำ:</strong> ใช้รดให้ความชื้นเหมาะสม (50-60%)</li>
+                        <li><strong>อัตราส่วน:</strong> เศษพืช:มูลสัตว์ = 3-4:1 (เป็นปริมาตร)</li>
+                    </ul>
+                    
+                    <h3>⏱️ ระยะเวลาการหมัก</h3>
+                    <ul>
+                        <li><strong>ระยะการหมักร้อน (Thermophilic phase):</strong> 2-4 สัปดาห์ - อุณหภูมิสูงสุด 60-70°C</li>
+                        <li><strong>ระยะการหมักเย็น (Mesophilic phase):</strong> 4-6 สัปดาห์ - อุณหภูมิลดลง</li>
+                        <li><strong>ระยะการสุกโรยม (Maturation phase):</strong> อีก 2-4 สัปดาห์ - ปุ๋ยสุกเต็มที่</li>
+                        <li><strong>รวมทั้งสิ้น:</strong> ประมาณ 60-70 วัน</li>
+                    </ul>
+                    
+                    <h3>🌱 ประโยชน์และการใช้งาน</h3>
+                    <ul>
+                        <li>✅ ประหยัดแรงงาน (ไม่ต้องพลิกกอง)</li>
+                        <li>✅ ได้ปุ๋ยคุณภาพสูง ผ่านเกณฑ์กรมวิชาการเกษตร</li>
+                        <li>✅ ระยะเวลาสั้น (60 วัน)</li>
+                        <li>✅ ลดปริมาณขยะไปฝังกลบ (ลดก๊าซมีเทน)</li>
+                        <li>✅ ประหยัดต้นทุน (ปุ๋ยเคมีแพง)</li>
+                        <li>✅ เหมาะสำหรับบ้าน โรงเรียน และฟาร์ม</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Video Section -->
+            <div id="video" class="content-section">
+                <div class="card">
+                    <h2>🎥 วีดิโอการสอน</h2>
+                    
+                    <h3>บทที่ 1: บทนำและหลักการพื้นฐาน</h3>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/dsGS0zeelAc" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <p>วีดิโอบทนำเกี่ยวกับปุ๋ยหมักแบบไม่พลิกกองตามสูตรแม่โจ้ 1 พร้อมขั้นตอนการทำเป็นรูปแบบสามเหลี่ยม</p>
+                    
+                    <h3>บทที่ 2: การเตรียมวัตถุดิบและขึ้นกอง</h3>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/b_8Z7TLs4Ww" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <p>วีดิโอสอนรายละเอียดการเตรียมวัตถุดิบ การคำนวณสัดส่วน และการขึ้นกองในรูปแบบวงตาข่าย</p>
+                    
+                    <h3>บทที่ 3: การดูแลรักษาและการตรวจสอบคุณภาพ</h3>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/RzyJS5M1B6g" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <p>วีดิโอเกี่ยวกับการรดน้ำ การตรวจสอบอุณหภูมิ และการประเมินคุณภาพปุ๋ยหมักตลอดระยะเวลาการหมัก</p>
+                </div>
+            </div>
+            
+            <!-- Activity Section -->
+            <div id="activity" class="content-section">
+                <div class="card">
+                    <h2>✏️ ใบกิจกรรม</h2>
+                    
+                    <div class="activity-item">
+                        <div class="activity-title">📋 กิจกรรมที่ 1: วางแผนการทำปุ๋ยหมัก</div>
+                        <p><strong>วัตถุประสงค์:</strong> นักเรียนวางแผนการทำปุ๋ยหมักอินทรีย์ โดยการคำนวณปริมาณวัตถุดิบ เตรียมวัสดุ และสถานที่</p>
+                        <p><strong>ขั้นตอน:</strong></p>
+                        <ol>
+                            <li>คำนวณปริมาณเศษพืชและมูลสัตว์ที่ต้องการ (อัตราส่วน 3:1)</li>
+                            <li>เตรียมวงตาข่ายหรือรั้วพลาสติก</li>
+                            <li>เลือกสถานที่ที่เหมาะสม (มีแดด แต่ไม่แล้ง)</li>
+                            <li>เตรียมเครื่องมือ (จอก เสียม วัดอุณหภูมิ ฯลฯ)</li>
+                        </ol>
+                        <button class="btn btn-success btn-small" onclick="markActivity('activity1')">✓ ทำเสร็จแล้ว</button>
+                    </div>
+                    
+                    <div class="activity-item" id="activity2-item">
+                        <div class="activity-title">🏗️ กิจกรรมที่ 2: ขึ้นกองปุ๋ยหมักอย่างถูกวิธี</div>
+                        <p><strong>วัตถุประสงค์:</strong> นักเรียนขึ้นกองปุ๋ยหมักตามหลักวิศวกรรมแม่โจ้ 1</p>
+                        <p><strong>ขั้นตอน:</strong></p>
+                        <ol>
+                            <li>สลายเศษพืชให้ขนาดพอเหมาะ (5-10 ซม.)</li>
+                            <li>นำเศษพืชลงกองเป็นชั้นหนา 10 ซม.</li>
+                            <li>วางชั้นมูลสัตว์หนา 2-3 ซม.</li>
+                            <li>รดน้ำให้ชื้น แล้วซ้ำขั้นตอนจนครบ 15-17 ชั้น</li>
+                            <li>ปั้นเป็นรูปสามเหลี่ยม หรือวงกลม (ในวงตาข่าย)</li>
+                        </ol>
+                        <button class="btn btn-success btn-small" onclick="markActivity('activity2')">✓ ทำเสร็จแล้ว</button>
+                    </div>
+                    
+                    <div class="activity-item" id="activity3-item">
+                        <div class="activity-title">💧 กิจกรรมที่ 3: ตรวจสอบความชื้นและอุณหภูมิ</div>
+                        <p><strong>วัตถุประสงค์:</strong> นักเรียนเรียนรู้วิธีการตรวจสอบสถานะของกองหมักและบันทึกข้อมูล</p>
+                        <p><strong>วิธีการตรวจสอบ:</strong></p>
+                        <ul>
+                            <li>🌡️ วัดอุณหภูมิ (สัปดาห์แรก-ที่ 2 ควรสูง 60-70°C)</li>
+                            <li>💧 ทดสอบความชื้น (บีบแล้วหยดออกมาน้อยน้อย = พอดี)</li>
+                            <li>👃 ตรวจสอบกลิ่น (ควรเป็นกลิ่นดินร่วน ไม่ควรเหม็น)</li>
+                            <li>🔍 สังเกตความเสื่อม (ปุ๋ยสุกจะมีโครงสร้างระคร้าน)</li>
+                        </ul>
+                        <button class="btn btn-success btn-small" onclick="markActivity('activity3')">✓ ทำเสร็จแล้ว</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Exercise Section -->
+            <div id="exercise" class="content-section">
+                <div class="card">
+                    <h2>📝 แบบฝึกหัด</h2>
+                    
+                    <h3>ฝึกหัดที่ 1: การคำนวณปริมาณวัตถุดิบ</h3>
+                    <p>ถ้าคุณต้องการทำปุ๋ยหมักในวงตาข่ายที่มีเส้นผ่านศูนย์กลาง 1 เมตร สูง 1.5 เมตร คำนวณปริมาณวัตถุดิบที่ต้องใช้</p>
+                    <div style="background: rgba(255, 255, 255, 0.5); padding: var(--space-16); border-radius: var(--radius-base); margin: var(--space-12) 0;">
+                        <p><strong>ขั้นตอนการคำนวณ:</strong></p>
+                        <ol>
+                            <li>ปริมาตรกองปุ๋ย = π × r² × h (โดย r = 0.5 เมตร, h = 1.5 เมตร)</li>
+                            <li>ปริมาตร ≈ 3.14 × 0.25 × 1.5 = 1.18 ลบ.ม.</li>
+                            <li>แต่เนื่องจากเป็นวงตาข่าย จึงใช้ประมาณ 0.6-0.8 ลบ.ม. ของปริมาตรจริง</li>
+                            <li>เศษพืช (75%): 0.6 × 0.75 = 0.45 ลบ.ม.</li>
+                            <li>มูลสัตว์ (25%): 0.6 × 0.25 = 0.15 ลบ.ม.</li>
+                        </ol>
+                    </div>
+                    
+                    <h3>ฝึกหัดที่ 2: การประมาณระยะเวลา</h3>
+                    <p>หากเริ่มต้นหมักเมื่อวันที่ 1 ตุลาคม จะสูงเสร็จสมบูรณ์เมื่อไร? (ถ้ากำหนดให้หมักตามปกติ 60 วัน)</p>
+                    <div style="background: rgba(255, 255, 255, 0.5); padding: var(--space-16); border-radius: var(--radius-base); margin: var(--space-12) 0;">
+                        <p><strong>คำตอบ:</strong> วันที่ 30 พฤศจิกายน (หลังจาก 60 วัน)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quiz Section -->
+            <div id="quiz" class="content-section">
+                <div class="card">
+                    <h2>📋 แบบทดสอบวัดความเข้าใจ</h2>
+                    <p style="color: var(--color-warning);"><strong>⚠️ คำสั่ง:</strong> เลือกคำตอบที่ถูกต้องที่สุดเพียงหนึ่งข้อ ทำครบทุกข้อแล้วคลิก "ส่งคำตอบ"</p>
+                    
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">1. อัตราส่วนของเศษพืช : มูลสัตว์ ที่เหมาะสมสำหรับการทำปุ๋ยหมักแบบไม่พลิกกองคือ?</div>
+                        <div class="quiz-options">
+                            <label class="quiz-option" onclick="selectQuizOption(this, 1, 0)">
+                                <input type="radio" name="q1"> ก. 1:1
+                            </label>
+                            <label class="quiz-option" onclick="selectQuizOption(this, 1, 1)">
+                                <input type="radio" name="q1"> ข. 2:1
+                            </label>
+                            <label class="quiz-option" onclick="selectQuizOption(this, 1, 2)">
+                                <input type="radio" name="q1"> ค. 3-4:1 ✓
+                            </label>
+                            <label class="quiz-option" onclick="selectQuizOption(this, 1, 3)">
+                                <input type="radio" name="q1"> ง. 5:1
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">2. ระยะเวลาที่ใช้ในการทำปุ๋ยหมักแบบไม่พลิกกองจนเสร็จสมบูรณ์คือกี่วัน?</div>
+                        <div class="quiz-options">
+                            <label class="quiz-option" onclick="selectQuizOption(this, 2, 0)">
+                                <input type="radio" name="q2"> ก. 30 วัน
+                            </label>
+                            <label class="quiz-option" onclick="selectQuizOption(this, 2, 1)">
+                                <input type="radio" name="q2"> ข. 45 วัน
+                            </label>
+                            <label class="quiz-option" onclick="selectQuizOption(this, 2, 2)">
+                                <input type="radio" name="q2"> ค. 60 วัน ✓
+                            </label>
+                            <label class="quiz-option" onclick="selectQuizOption(this, 2, 3)">
+                                <input type="radio" name="q2"> ง. 90 วัน
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">3. ข้อใดเป็นข้อดีของการทำปุ๋ยหมักแบบไม่พลิกกอง?</div>
+                        <div class="quiz-options">
+                            <label class="quiz-option" onclick="selectQuizOption(this, 3, 0)">
+                                <input type="radio" name="q3"> ก. ประหยัดแรงงาน
+                            </label>
+                            <label class="quiz-option" onclick="selectQuizOption(this, 3, 1)">
+                                <input type="radio" name="q3"> ข. ลดต้นทุน
+                            </label>
+                            <label class="quiz-option" onclick="selectQuizOption(this, 3, 2)">
+                                <input type="radio" name="q3"> ค. ได้ปุ๋ยคุณภาพสูง
+                            </label>
+                            <label class="quiz-option" onclick="selectQuizOption(this, 3, 3)">
+                                <input type="radio" name="q3"> ง. ถูกทุกข้อ ✓
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">4. อุณหภูมิที่เหมาะสมสำหรับระยะแรกของการหมัก (ระยะหมักร้อน) คือ?</div>
+                        <div class="quiz-options">
+                            <label class="quiz-option" onclick="selectQuizOption(this, 4, 0)">
+                                <input type="radio" name="q4"> ก. 30-40°C
+                            </label>
+                            <label class="quiz-option" onclick="selectQuizOption(this, 4, 1)">
+                                <input type="radio" name="q4"> ข. 60-70°C ✓
+                            </label>
+                            <label class="quiz-option" onclick="selectQuizOption(this, 4, 2)">
+                                <input type="radio" name="q4"> ค. 80-90°C
+                            </label>
+                            <label class="quiz-option" onclick="selectQuizOption(this, 4, 3)">
+                                <input type="radio" name="q4"> ง. 50-60°C
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">5. วัตถุดิบใดที่ไม่เหมาะสำหรับการทำปุ๋ยหมัก?</div>
+                        <div class="quiz-options">
+                            <label class="quiz-option" onclick="selectQuizOption(this, 5, 0)">
+                                <input type="radio" name="q5"> ก. เศษอาหารมีเนื้อสัตว์ ✓
+                            </label>
+                            <label class="quiz-option" onclick="selectQuizOption(this, 5, 1)">
+                                <input type="radio" name="q5"> ข. ฟางข้าว
+                            </label>
+                            <label class="quiz-option" onclick="selectQuizOption(this, 5, 2)">
+                                <input type="radio" name="q5"> ค. ใบไม้แห้ง
+                            </label>
+                            <label class="quiz-option" onclick="selectQuizOption(this, 5, 3)">
+                                <input type="radio" name="q5"> ง. ขี้วัว
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary" style="width: 100%; margin-top: var(--space-20);" onclick="submitQuiz()">
+                        ✓ ส่งคำตอบ
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Dashboard Section -->
+            <div id="dashboard" class="content-section">
+                <div class="grid">
+                    <div class="dashboard-stat">
+                        <div class="stat-label">สถานะการเรียน</div>
+                        <div class="stat-value" id="learningStatus">-</div>
+                    </div>
+                    <div class="dashboard-stat" style="background: linear-gradient(135deg, var(--color-orange-400), #d97706);">
+                        <div class="stat-label">ความก้าวหน้า</div>
+                        <div class="stat-value" id="progressPercent">0%</div>
+                    </div>
+                    <div class="dashboard-stat" style="background: linear-gradient(135deg, var(--color-teal-600), var(--color-teal-700));">
+                        <div class="stat-label">คะแนนแบบทดสอบ</div>
+                        <div class="stat-value" id="quizScore">-</div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2>📊 ผลการประเมินผล</h2>
+                    <p style="color: var(--color-text-secondary);">บันทึกข้อมูลการเรียนรู้และความก้าวหน้าของนักเรียน</p>
+                    
+                    <h3>สรุปความก้าวหน้า</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressBar" style="width: 0%"></div>
+                    </div>
+                    <p id="progressText" style="text-align: center; color: var(--color-text-secondary);">0 / 3 กิจกรรม</p>
+                    
+                    <h3 style="margin-top: var(--space-24);">บันทึกกิจกรรมที่ทำเสร็จแล้ว</h3>
+                    <div id="completedActivities" style="margin: var(--space-16) 0;"></div>
+                    
+                    <h3 style="margin-top: var(--space-24);">ผลการสอบแบบทดสอบ</h3>
+                    <div id="quizResultsDisplay" style="text-align: center; padding: var(--space-20); background: rgba(33, 128, 141, 0.05); border-radius: var(--radius-lg); display: none;">
+                        <p style="color: var(--color-text-secondary); margin: 0 0 var(--space-12) 0;">คะแนนของคุณ</p>
+                        <div class="score-display" id="finalScore">-</div>
+                        <div id="gradeBadgeDisplay"></div>
+                    </div>
+                    <p id="noQuizMessage" style="text-align: center; color: var(--color-text-secondary); padding: var(--space-16);">ยังไม่มีผลการสอบ (ทำแบบทดสอบเพื่อดูผลคะแนน)</p>
+                    
+                    <h3 style="margin-top: var(--space-24);">ส่งออกรายงาน</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 14px; margin-bottom: var(--space-16);">ดาวน์โหลดรายงานผลการประเมินเป็นไฟล์ PDF</p>
+                    <button class="btn btn-primary" onclick="generatePDF()">📥 ส่งออก PDF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Data Storage
+        let userInfo = {
+            fullName: '',
+            studentId: '',
+            className: '',
+            loggedIn: false
+        };
+        
+        let learningData = {
+            completedActivities: {},
+            quizAnswers: {},
+            quizScore: 0,
+            quizTaken: false,
+            timestamp: new Date().toLocaleString('th-TH')
+        };
+        
+        const quizAnswers = {
+            1: 2,
+            2: 2,
+            3: 3,
+            4: 1,
+            5: 0
+        };
+        
+        // Login function
+        function loginUser() {
+            const fullName = document.getElementById('fullName').value.trim();
+            const studentId = document.getElementById('studentId').value.trim();
+            const className = document.getElementById('className').value.trim();
+            
+            if (!fullName || !studentId || !className) {
+                alert('⚠️ กรุณากรอกข้อมูลให้ครบทั้งหมด');
+                return;
+            }
+            
+            userInfo = {
+                fullName: fullName,
+                studentId: studentId,
+                className: className,
+                loggedIn: true
+            };
+            
+            document.getElementById('loginSection').style.display = 'none';
+            document.getElementById('appSection').style.display = 'block';
+            
+            document.getElementById('userDisplayName').textContent = fullName;
+            document.getElementById('userInfo').textContent = `เลขที่: ${studentId} | ชั้น: ${className}`;
+            
+            updateDashboard();
+        }
+        
+        // Logout function
+        function logout() {
+            if (confirm('คุณต้องการออกจากระบบใช่หรือไม่?')) {
+                userInfo.loggedIn = false;
+                document.getElementById('appSection').style.display = 'none';
+                document.getElementById('loginSection').style.display = 'block';
+                document.getElementById('fullName').value = '';
+                document.getElementById('studentId').value = '';
+                document.getElementById('className').value = '';
+            }
+        }
+        
+        // Switch tabs
+        function switchTab(tabName) {
+            document.querySelectorAll('.content-section').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelectorAll('.nav-tab').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+        
+        // Mark activity as completed
+        function markActivity(activityId) {
+            learningData.completedActivities[activityId] = {
+                completed: true,
+                date: new Date().toLocaleString('th-TH')
+            };
+            
+            const button = event.target;
+            button.disabled = true;
+            button.style.opacity = '0.5';
+            button.parentElement.classList.add('completed');
+            
+            updateDashboard();
+            alert('✓ บันทึกการทำเสร็จแล้ว');
+        }
+        
+        // Select quiz option
+        function selectQuizOption(element, question, index) {
+            const options = element.parentElement.querySelectorAll('.quiz-option');
+            options.forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+            learningData.quizAnswers[question] = index;
+        }
+        
+        // Submit quiz
+        function submitQuiz() {
+            if (Object.keys(learningData.quizAnswers).length < 5) {
+                alert('⚠️ กรุณาตอบคำถามให้ครบทั้ง 5 ข้อ');
+                return;
+            }
+            
+            let score = 0;
+            for (let q in quizAnswers) {
+                if (learningData.quizAnswers[q] === quizAnswers[q]) {
+                    score++;
+                }
+            }
+            
+            learningData.quizScore = (score / 5) * 100;
+            learningData.quizTaken = true;
+            
+            // Show results
+            showQuizResults(score);
+            updateDashboard();
+            
+            alert(`✓ ส่งคำตอบสำเร็จ! คุณได้ ${score} / 5 คะแนน`);
+        }
+        
+        // Show quiz results
+        function showQuizResults(score) {
+            const gradeText = score >= 5 ? 'ยอดเยี่ยม' : score >= 4 ? 'ดี' : score >= 3 ? 'พอใจ' : 'ต้องปรับปรุง';
+            const gradeClass = score >= 5 ? 'excellent' : score >= 4 ? 'good' : score >= 3 ? 'fair' : 'poor';
+            
+            document.getElementById('finalScore').textContent = `${score} / 5`;
+            document.getElementById('gradeBadgeDisplay').innerHTML = `<div class="grade-badge ${gradeClass}">${gradeText}</div>`;
+            document.getElementById('quizResultsDisplay').style.display = 'block';
+            document.getElementById('noQuizMessage').style.display = 'none';
+        }
+        
+        // Update dashboard
+        function updateDashboard() {
+            const activitiesCompleted = Object.keys(learningData.completedActivities).length;
+            const progressPercent = Math.round((activitiesCompleted / 3) * 100);
+            
+            document.getElementById('progressPercent').textContent = progressPercent + '%';
+            document.getElementById('progressBar').style.width = progressPercent + '%';
+            document.getElementById('progressText').textContent = `${activitiesCompleted} / 3 กิจกรรม`;
+            
+            if (learningData.quizTaken) {
+                document.getElementById('quizScore').textContent = Math.round(learningData.quizScore) + '%';
+            }
+            
+            // Update completed activities list
+            let html = '';
+            for (let activity in learningData.completedActivities) {
+                const date = learningData.completedActivities[activity].date;
+                html += `<div class="activity-item completed">
+                    <div class="activity-title">✓ ${activity.toUpperCase()}</div>
+                    <div class="activity-date">วันที่ทำเสร็จ: ${date}</div>
+                </div>`;
+            }
+            document.getElementById('completedActivities').innerHTML = html || '<p style="color: var(--color-text-secondary);">ยังไม่มีกิจกรรมที่เสร็จแล้ว</p>';
+            
+            document.getElementById('learningStatus').textContent = progressPercent > 0 ? 'กำลังเรียน' : 'ยังไม่เริ่ม';
+        }
+        
+        // Generate PDF
+        function generatePDF() {
+            if (!userInfo.loggedIn) {
+                alert('⚠️ กรุณาลงชื่อเข้าใช้ก่อน');
+                return;
+            }
+            
+            const activitiesCompleted = Object.keys(learningData.completedActivities).length;
+            const progressPercent = Math.round((activitiesCompleted / 3) * 100);
+            
+            let pdfContent = `
+LAPORAN HASIL PEMBELAJARAN
+ปุ๋ยหมักแบบไม่พลิกกองในวงตาข่าย
+
+═══════════════════════════════════════════════════════════
+
+ข้อมูลนักเรียน:
+───────────────
+ชื่อ - นามสกุล: ${userInfo.fullName}
+เลขที่นักเรียน: ${userInfo.studentId}
+ชั้นเรียน: ${userInfo.className}
+วันที่รายงาน: ${learningData.timestamp}
+
+═══════════════════════════════════════════════════════════
+
+สรุปผลการประเมิน:
+───────────────
+
+1. ความก้าวหน้าการเรียน
+   ▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░ ${progressPercent}%
+   (${activitiesCompleted} / 3 กิจกรรม)
+
+2. กิจกรรมที่ทำเสร็จแล้ว
+`;
+            
+            if (activitiesCompleted > 0) {
+                for (let activity in learningData.completedActivities) {
+                    const date = learningData.completedActivities[activity].date;
+                    pdfContent += `   ✓ ${activity.toUpperCase()} - ${date}\n`;
+                }
+            } else {
+                pdfContent += `   (ยังไม่มีกิจกรรมที่เสร็จแล้ว)\n`;
+            }
+            
+            pdfContent += `
+3. ผลการสอบแบบทดสอบ
+`;
+            
+            if (learningData.quizTaken) {
+                const score = Math.round(learningData.quizScore);
+                const gradeText = score >= 100 ? 'ยอดเยี่ยม' : score >= 80 ? 'ดี' : score >= 60 ? 'พอใจ' : 'ต้องปรับปรุง';
+                pdfContent += `   คะแนน: ${score}%
+   เกรด: ${gradeText}
+   สถานะ: ผ่านการทดสอบ ✓
+`;
+            } else {
+                pdfContent += `   (ยังไม่ได้ทำแบบทดสอบ)\n`;
+            }
+            
+            pdfContent += `
+═══════════════════════════════════════════════════════════
+
+หมายเหตุ:
+นักเรียนได้แสดงความสนใจและความเข้าใจในการเรียนรู้เรื่องปุ๋ยหมัก
+แบบไม่พลิกกองตามเกณฑ์การประเมินผล
+
+═══════════════════════════════════════════════════════════
+รับรองโดย: ครูผู้สอน  นายสัญญา  นาคเจือ
+วันที่พิมพ์: ${new Date().toLocaleDateString('th-TH', {year: 'numeric', month: 'long', day: 'numeric'})}
+`;
+            
+            // Create blob and download
+            const element = document.createElement('a');
+            const file = new Blob([pdfContent], {type: 'text/plain'});
+            element.href = URL.createObjectURL(file);
+            element.download = `Report_${userInfo.studentId}_${userInfo.fullName.replace(/\s+/g, '_')}.txt`;
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+            
+            alert('✓ ดาวน์โหลดรายงานสำเร็จ');
+        }
+    </script>
+</body>
+</html>
