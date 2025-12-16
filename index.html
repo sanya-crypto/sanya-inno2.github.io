@@ -1,9 +1,13 @@
+
+แอปการเรียนรู้ปุ๋ยหมัก
+
+
 <!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>แอปการเรียนรู้ ปุ๋ยหมักแบบไม่พลิกกองในวงตาข่าย</title>
+    <title>แอปการเรียนรู้ ปุ๋ยหมักแบบไม่พลิกกองในวงตาข่าย โดยครูya </title>
     <style>
         :root {
             --color-white: rgba(255, 255, 255, 1);
@@ -562,6 +566,36 @@
                     <h3>🎯 แนวคิดพื้นฐาน</h3>
                     <p>ปุ๋ยหมักแบบไม่พลิกกอง "วิศวกรรมแม่โจ้ 1" คือการทำปุ๋ยอินทรีย์โดยใช้หลักการระบายอากาศในกองหมัก ทำให้ไม่ต้องพลิกกลับกองบ่อยครั้ง ทำให้ประหยัดแรงงาน เวลา และต้นทุน</p>
                     
+                    <!-- Infographic: Process Flow -->
+                    <div style="background: linear-gradient(135deg, rgba(33, 128, 141, 0.1), rgba(230, 129, 97, 0.1)); padding: var(--space-20); border-radius: var(--radius-lg); margin: var(--space-20) 0;">
+                        <h4 style="text-align: center; margin-top: 0; color: var(--color-teal-600);">📊 กระบวนการทำปุ๋ยหมัก (60 วัน)</h4>
+                        <div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: var(--space-16); margin: var(--space-20) 0;">
+                            <div style="text-align: center; flex: 1; min-width: 120px;">
+                                <div style="background: var(--color-teal-500); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-12) auto; font-size: 24px;">🏗️</div>
+                                <strong>1. เตรียม</strong><br>
+                                <span style="font-size: 12px; color: var(--color-text-secondary);">7-14 วัน</span>
+                            </div>
+                            <div style="font-size: 24px; color: var(--color-text-secondary);">→</div>
+                            <div style="text-align: center; flex: 1; min-width: 120px;">
+                                <div style="background: var(--color-orange-400); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-12) auto; font-size: 24px;">🔥</div>
+                                <strong>2. หมักร้อน</strong><br>
+                                <span style="font-size: 12px; color: var(--color-text-secondary);">14-28 วัน</span>
+                            </div>
+                            <div style="font-size: 24px; color: var(--color-text-secondary);">→</div>
+                            <div style="text-align: center; flex: 1; min-width: 120px;">
+                                <div style="background: var(--color-teal-600); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-12) auto; font-size: 24px;">❄️</div>
+                                <strong>3. หมักเย็น</strong><br>
+                                <span style="font-size: 12px; color: var(--color-text-secondary);">14-21 วัน</span>
+                            </div>
+                            <div style="font-size: 24px; color: var(--color-text-secondary);">→</div>
+                            <div style="text-align: center; flex: 1; min-width: 120px;">
+                                <div style="background: var(--color-success); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-12) auto; font-size: 24px;">✅</div>
+                                <strong>4. สิ้นสุด</strong><br>
+                                <span style="font-size: 12px; color: var(--color-text-secondary);">พร้อมใช้</span>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <h3>💡 หลักการทำงาน</h3>
                     <ul>
                         <li><strong>การย่อยสลายแบบใช้ออกซิเจน (Aerobic Decomposition):</strong> จุลินทรีย์ใช้ออกซิเจนในการย่อยสลายวัสดุอินทรีย์</li>
@@ -569,21 +603,40 @@
                         <li><strong>ไม่ต้องกลับกอง:</strong> เนื่องจากมีอากาศไหลเวียนเพียงพอเอง</li>
                     </ul>
                     
-                    <h3>📦 วัตถุดิบและสูตร</h3>
-                    <ul>
-                        <li><strong>เศษพืช:</strong> ฟางข้าว ซังข้าวโพด ใบไม้ แต่ฝ ตะกอน (ประมาณ 4 ส่วน)</li>
-                        <li><strong>มูลสัตว์:</strong> ขี้วัว ขี้ม้า ขี้เป็ด (ประมาณ 1 ส่วน)</li>
-                        <li><strong>น้ำ:</strong> ใช้รดให้ความชื้นเหมาะสม (50-60%)</li>
-                        <li><strong>อัตราส่วน:</strong> เศษพืช:มูลสัตว์ = 3-4:1 (เป็นปริมาตร)</li>
-                    </ul>
+                    <!-- Infographic: Material Ratio -->
+                    <div style="background: rgba(94, 82, 64, 0.05); padding: var(--space-20); border-radius: var(--radius-lg); margin: var(--space-20) 0;">
+                        <h4 style="text-align: center; margin-top: 0; color: var(--color-brown-600);">📦 สูตรวัตถุดิบ: 3-4:1</h4>
+                        <div style="display: flex; justify-content: center; gap: var(--space-16); flex-wrap: wrap; margin: var(--space-16) 0;">
+                            <div style="flex: 1; min-width: 150px; background: linear-gradient(135deg, rgba(100, 150, 50, 0.2), rgba(150, 180, 80, 0.2)); padding: var(--space-16); border-radius: var(--radius-base); text-align: center;">
+                                <div style="font-size: 32px; margin-bottom: var(--space-8);">🌾</div>
+                                <strong style="color: var(--color-text);">เศษพืช</strong><br>
+                                <span style="font-size: 20px; color: var(--color-teal-600); font-weight: 700;">75%</span><br>
+                                <span style="font-size: 12px; color: var(--color-text-secondary);">ฟาง ใบไม้ ตะกอน</span>
+                            </div>
+                            <div style="flex: 1; min-width: 150px; background: linear-gradient(135deg, rgba(180, 130, 70, 0.2), rgba(200, 150, 100, 0.2)); padding: var(--space-16); border-radius: var(--radius-base); text-align: center;">
+                                <div style="font-size: 32px; margin-bottom: var(--space-8);">💩</div>
+                                <strong style="color: var(--color-text);">มูลสัตว์</strong><br>
+                                <span style="font-size: 20px; color: var(--color-orange-400); font-weight: 700;">25%</span><br>
+                                <span style="font-size: 12px; color: var(--color-text-secondary);">ขี้วัว ขี้ม้า ขี้เป็ด</span>
+                            </div>
+                        </div>
+                    </div>
                     
-                    <h3>⏱️ ระยะเวลาการหมัก</h3>
-                    <ul>
-                        <li><strong>ระยะการหมักร้อน (Thermophilic phase):</strong> 2-4 สัปดาห์ - อุณหภูมิสูงสุด 60-70°C</li>
-                        <li><strong>ระยะการหมักเย็น (Mesophilic phase):</strong> 4-6 สัปดาห์ - อุณหภูมิลดลง</li>
-                        <li><strong>ระยะการสุกโรยม (Maturation phase):</strong> อีก 2-4 สัปดาห์ - ปุ๋ยสุกเต็มที่</li>
-                        <li><strong>รวมทั้งสิ้น:</strong> ประมาณ 60-70 วัน</li>
-                    </ul>
+                    <h3>⏱️ ระยะเวลาการหมัก (อุณหภูมิและสถานะ)</h3>
+                    <div style="background: rgba(255, 255, 255, 0.3); padding: var(--space-16); border-radius: var(--radius-base); margin: var(--space-16) 0;">
+                        <div style="margin-bottom: var(--space-16);">
+                            <strong style="color: var(--color-orange-400);">🔥 ระยะหมักร้อน (2-4 สัปดาห์)</strong><br>
+                            <span style="color: var(--color-text-secondary);">• อุณหภูมิ: 60-70°C | สถานะ: หมักอย่างรวดเร็ว | กลิ่น: ไม่มี</span>
+                        </div>
+                        <div style="margin-bottom: var(--space-16);">
+                            <strong style="color: var(--color-teal-600);">❄️ ระยะหมักเย็น (4-6 สัปดาห์)</strong><br>
+                            <span style="color: var(--color-text-secondary);">• อุณหภูมิ: 40-50°C | สถานะ: ย่อยสลายปลายไป | กลิ่น: ดินร่วน</span>
+                        </div>
+                        <div>
+                            <strong style="color: var(--color-success);">✅ ระยะสุก (2-4 สัปดาห์)</strong><br>
+                            <span style="color: var(--color-text-secondary);">• อุณหภูมิ: อุณหภูมิห้อง | สถานะ: สิ้นสุด | กลิ่น: ดินร่วนชัดเจน</span>
+                        </div>
+                    </div>
                     
                     <h3>🌱 ประโยชน์และการใช้งาน</h3>
                     <ul>
@@ -625,46 +678,115 @@
             <!-- Activity Section -->
             <div id="activity" class="content-section">
                 <div class="card">
-                    <h2>✏️ ใบกิจกรรม</h2>
+                    <h2>✏️ ใบกิจกรรม - ฝึกทักษะขั้นสูง</h2>
                     
                     <div class="activity-item">
-                        <div class="activity-title">📋 กิจกรรมที่ 1: วางแผนการทำปุ๋ยหมัก</div>
-                        <p><strong>วัตถุประสงค์:</strong> นักเรียนวางแผนการทำปุ๋ยหมักอินทรีย์ โดยการคำนวณปริมาณวัตถุดิบ เตรียมวัสดุ และสถานที่</p>
-                        <p><strong>ขั้นตอน:</strong></p>
+                        <div class="activity-title">📋 กิจกรรมที่ 1: วางแผนและออกแบบระบบปุ๋ยหมัก</div>
+                        <p><strong>วัตถุประสงค์:</strong> นักเรียนวางแผนระบบปุ๋ยหมักเต็มรูปแบบ คำนวณข้อมูล เตรียมวัสดุ และออกแบบการจัดการตลอดระยะเวลา 60 วัน</p>
+                        <p><strong>ภาคแรก - การวางแผน:</strong></p>
                         <ol>
-                            <li>คำนวณปริมาณเศษพืชและมูลสัตว์ที่ต้องการ (อัตราส่วน 3:1)</li>
-                            <li>เตรียมวงตาข่ายหรือรั้วพลาสติก</li>
-                            <li>เลือกสถานที่ที่เหมาะสม (มีแดด แต่ไม่แล้ง)</li>
-                            <li>เตรียมเครื่องมือ (จอก เสียม วัดอุณหภูมิ ฯลฯ)</li>
+                            <li>คำนวณปริมาณเศษพืชและมูลสัตว์ (อัตราส่วน 3:1) สำหรับกองขนาด 1 x 1.5 เมตร</li>
+                            <li>คำนวณปริมาตร และปริมาณวัตถุดิบที่ต้องการจริง</li>
+                            <li>เลือกสถานที่เหมาะสม (วิเคราะห์: แสงแดด ความเย็น การระบายอากาศ)</li>
+                            <li>ออกแบบวงตาข่าย (วัสดุ ขนาด ความแข็งแกร่ง)</li>
+                            <li>เตรียมอุปกรณ์ติดตาม (วัดอุณหภูมิ บันทึกข้อมูล)</li>
                         </ol>
-                        <button class="btn btn-success btn-small" onclick="markActivity('activity1')">✓ ทำเสร็จแล้ว</button>
+                        <p><strong>ภาคสอง - การบันทึก (ส่ง Form):</strong></p>
+                        <input type="text" class="form-control" id="activity1_location" placeholder="สถานที่ที่เลือก" style="margin: var(--space-8) 0;">
+                        <input type="number" class="form-control" id="activity1_volume" placeholder="ปริมาตรประมาณ (ลบ.ม.)" style="margin: var(--space-8) 0;">
+                        <button class="btn btn-success btn-small" onclick="submitActivity('activity1')">✓ บันทึกข้อมูล</button>
                     </div>
                     
                     <div class="activity-item" id="activity2-item">
-                        <div class="activity-title">🏗️ กิจกรรมที่ 2: ขึ้นกองปุ๋ยหมักอย่างถูกวิธี</div>
-                        <p><strong>วัตถุประสงค์:</strong> นักเรียนขึ้นกองปุ๋ยหมักตามหลักวิศวกรรมแม่โจ้ 1</p>
-                        <p><strong>ขั้นตอน:</strong></p>
+                        <div class="activity-title">🏗️ กิจกรรมที่ 2: ปฏิบัติการขึ้นกองปุ๋ยหมัก (การวัด บันทึก สรุป)</div>
+                        <p><strong>วัตถุประสงค์:</strong> นักเรียนปฏิบัติการขึ้นกองจริง บันทึกข้อมูลแต่ละชั้น และวัดอุณหภูมิเริ่มต้น</p>
+                        <p><strong>ขั้นตอนการปฏิบัติ:</strong></p>
                         <ol>
-                            <li>สลายเศษพืชให้ขนาดพอเหมาะ (5-10 ซม.)</li>
-                            <li>นำเศษพืชลงกองเป็นชั้นหนา 10 ซม.</li>
-                            <li>วางชั้นมูลสัตว์หนา 2-3 ซม.</li>
-                            <li>รดน้ำให้ชื้น แล้วซ้ำขั้นตอนจนครบ 15-17 ชั้น</li>
-                            <li>ปั้นเป็นรูปสามเหลี่ยม หรือวงกลม (ในวงตาข่าย)</li>
+                            <li>สลายเศษพืชให้ขนาดสม่ำเสมอ (5-10 ซม.) และชั่งน้ำหนัก</li>
+                            <li>วางชั้นเศษพืช (10 ซม.) + ชั้นมูลสัตว์ (2-3 ซม.) ซ้ำ 15-17 ชั้น</li>
+                            <li>รดน้ำแต่ละชั้นให้ชื้นสม่ำเสมอ (บันทึกปริมาณน้ำ)</li>
+                            <li>ปั้นเป็นรูปร่างและวัดขนาด (สูง กว้าง) บันทึกข้อมูล</li>
+                            <li>วัดอุณหภูมิเริ่มต้น (ในกลาง นอก บนสุด ล่างสุด)</li>
                         </ol>
-                        <button class="btn btn-success btn-small" onclick="markActivity('activity2')">✓ ทำเสร็จแล้ว</button>
+                        <p><strong>บันทึกข้อมูลปฏิบัติการ:</strong></p>
+                        <textarea class="form-control" id="activity2_notes" placeholder="บันทึกรายละเอียดการปฏิบัติการ เช่น สภาพอากาศ ปัญหา ข้อสังเกต" style="margin: var(--space-8) 0; height: 80px;"></textarea>
+                        <label style="font-size: 12px; color: var(--color-text-secondary);">อุณหภูมิเริ่มต้น (°C):</label>
+                        <input type="number" class="form-control" id="activity2_temp" placeholder="เช่น 28" style="margin: var(--space-8) 0;">
+                        <button class="btn btn-success btn-small" onclick="submitActivity('activity2')">✓ บันทึกข้อมูลปฏิบัติการ</button>
                     </div>
                     
                     <div class="activity-item" id="activity3-item">
-                        <div class="activity-title">💧 กิจกรรมที่ 3: ตรวจสอบความชื้นและอุณหภูมิ</div>
-                        <p><strong>วัตถุประสงค์:</strong> นักเรียนเรียนรู้วิธีการตรวจสอบสถานะของกองหมักและบันทึกข้อมูล</p>
-                        <p><strong>วิธีการตรวจสอบ:</strong></p>
-                        <ul>
-                            <li>🌡️ วัดอุณหภูมิ (สัปดาห์แรก-ที่ 2 ควรสูง 60-70°C)</li>
-                            <li>💧 ทดสอบความชื้น (บีบแล้วหยดออกมาน้อยน้อย = พอดี)</li>
-                            <li>👃 ตรวจสอบกลิ่น (ควรเป็นกลิ่นดินร่วน ไม่ควรเหม็น)</li>
-                            <li>🔍 สังเกตความเสื่อม (ปุ๋ยสุกจะมีโครงสร้างระคร้าน)</li>
-                        </ul>
-                        <button class="btn btn-success btn-small" onclick="markActivity('activity3')">✓ ทำเสร็จแล้ว</button>
+                        <div class="activity-title">💧 กิจกรรมที่ 3: ติดตามและวิเคราะห์ข้อมูล (Weekly Monitoring)</div>
+                        <p><strong>วัตถุประสงค์:</strong> นักเรียนติดตามสถานะปุ๋ยหมักประจำสัปดาห์ วัดอุณหภูมิ ความชื้น และวิเคราะห์แนวโน้มการเปลี่ยนแปลง</p>
+                        <p><strong>การติดตามรายสัปดาห์ (ทำเป็น 4-6 ครั้ง):</strong></p>
+                        <div style="background: rgba(255, 255, 255, 0.3); padding: var(--space-12); border-radius: var(--radius-base); margin: var(--space-12) 0;">
+                            <label class="form-label">สัปดาห์ที่:</label>
+                            <input type="number" class="form-control" id="activity3_week" placeholder="1, 2, 3..." min="1" max="8" style="margin: var(--space-8) 0;">
+                            
+                            <label class="form-label">🌡️ อุณหภูมิในกอง (°C):</label>
+                            <input type="number" class="form-control" id="activity3_temp" placeholder="60-70" style="margin: var(--space-8) 0;">
+                            
+                            <label class="form-label">💧 ความชื้น (ระดับ):</label>
+                            <select class="form-control" id="activity3_moisture" style="margin: var(--space-8) 0;">
+                                <option value="">-- เลือก --</option>
+                                <option value="low">🔴 แห้งเกินไป (ต้องรดน้ำ)</option>
+                                <option value="good">🟢 พอดี (ไม่ต้องรดน้ำ)</option>
+                                <option value="high">🔵 ชื้นเกินไป (ต้องทำให้แห้ง)</option>
+                            </select>
+                            
+                            <label class="form-label">👃 กลิ่น:</label>
+                            <select class="form-control" id="activity3_smell" style="margin: var(--space-8) 0;">
+                                <option value="">-- เลือก --</option>
+                                <option value="ammonia">⚠️ เหม็นปัสสาวะ</option>
+                                <option value="soil">✓ ดินร่วน</option>
+                                <option value="rotten">❌腐 (เสื่อมเกินไป)</option>
+                            </select>
+                            
+                            <label class="form-label">📝 ข้อสังเกต:</label>
+                            <textarea class="form-control" id="activity3_observation" placeholder="เช่น สี โครงสร้าง สัตว์ เห่า ฯลฯ" style="margin: var(--space-8) 0; height: 60px;"></textarea>
+                        </div>
+                        <button class="btn btn-success btn-small" onclick="submitActivity('activity3')">✓ บันทึกการติดตามสัปดาห์ที่ {week}</button>
+                    </div>
+                    
+                    <div class="activity-item" id="activity4-item">
+                        <div class="activity-title">🔬 กิจกรรมที่ 4: วิเคราะห์คุณภาพปุ๋ยสำเร็จ (การประเมินคุณภาพ)</div>
+                        <p><strong>วัตถุประสงค์:</strong> นักเรียนประเมินปุ๋ยที่สำเร็จตามมาตรฐานกรมวิชาการเกษตร และวิเคราะห์ความสำเร็จของโครงการ</p>
+                        <p><strong>ผลการประเมินคุณภาพ:</strong></p>
+                        <div style="background: rgba(255, 255, 255, 0.3); padding: var(--space-12); border-radius: var(--radius-base); margin: var(--space-12) 0;">
+                            <label class="form-label">✓ สี:</label>
+                            <select class="form-control" id="activity4_color" style="margin: var(--space-8) 0;">
+                                <option value="">-- เลือก --</option>
+                                <option value="dark_brown">🟤 น้ำตาลเข้มถึงสีดำ (ดี)</option>
+                                <option value="light_brown">🟠 น้ำตาลอ่อน (ยังไม่สุก)</option>
+                                <option value="black">⚫ ดำจัด (สุกมากเกินไป)</option>
+                            </select>
+                            
+                            <label class="form-label">✓ โครงสร้าง:</label>
+                            <select class="form-control" id="activity4_structure" style="margin: var(--space-8) 0;">
+                                <option value="">-- เลือก --</option>
+                                <option value="crumbly">✓ ร่วนแตกตัว (ดี)</option>
+                                <option value="chunky">⚠️ ยังมีเศษขนาดใหญ่ (ยังไม่สุก)</option>
+                                <option value="powder">❌ ผงเหมือนแป้ง (สุกมากเกินไป)</option>
+                            </select>
+                            
+                            <label class="form-label">✓ กลิ่น:</label>
+                            <select class="form-control" id="activity4_smell2" style="margin: var(--space-8) 0;">
+                                <option value="">-- เลือก --</option>
+                                <option value="soil">✓ กลิ่นดินร่วน (ดี)</option>
+                                <option value="ammonia">⚠️ มีกลิ่นแรง (ยังไม่สุก)</option>
+                            </select>
+                            
+                            <label class="form-label">✓ ไม่มีเศษพืชที่มองเห็น:</label>
+                            <select class="form-control" id="activity4_debris" style="margin: var(--space-8) 0;">
+                                <option value="">-- เลือก --</option>
+                                <option value="no">✓ ไม่มี (ดี)</option>
+                                <option value="yes">⚠️ มีเศษพืชเหลือ (ยังไม่สุก)</option>
+                            </select>
+                            
+                            <label class="form-label">💯 ผลสรุป:</label>
+                            <textarea class="form-control" id="activity4_summary" placeholder="วิเคราะห์ความสำเร็จ ปัญหา และข้อแนะนำสำหรับครั้งต่อไป" style="margin: var(--space-8) 0; height: 80px;"></textarea>
+                        </div>
+                        <button class="btn btn-success btn-small" onclick="submitActivity('activity4')">✓ บันทึกผลการประเมินคุณภาพ</button>
                     </div>
                 </div>
             </div>
@@ -672,10 +794,10 @@
             <!-- Exercise Section -->
             <div id="exercise" class="content-section">
                 <div class="card">
-                    <h2>📝 แบบฝึกหัด</h2>
+                    <h2>📝 แบบฝึกหัด - ความหลากหลาย</h2>
                     
-                    <h3>ฝึกหัดที่ 1: การคำนวณปริมาณวัตถุดิบ</h3>
-                    <p>ถ้าคุณต้องการทำปุ๋ยหมักในวงตาข่ายที่มีเส้นผ่านศูนย์กลาง 1 เมตร สูง 1.5 เมตร คำนวณปริมาณวัตถุดิบที่ต้องใช้</p>
+                    <h3>🔢 ฝึกหัดที่ 1: คำนวณปริมาณวัตถุดิบ (โจทย์แปรผัน)</h3>
+                    <p><strong>โจทย์:</strong> ถ้าคุณต้องการทำปุ๋ยหมักในวงตาข่ายที่มีเส้นผ่านศูนย์กลาง 1 เมตร สูง 1.5 เมตร คำนวณปริมาณวัตถุดิบที่ต้องใช้</p>
                     <div style="background: rgba(255, 255, 255, 0.5); padding: var(--space-16); border-radius: var(--radius-base); margin: var(--space-12) 0;">
                         <p><strong>ขั้นตอนการคำนวณ:</strong></p>
                         <ol>
@@ -685,12 +807,101 @@
                             <li>เศษพืช (75%): 0.6 × 0.75 = 0.45 ลบ.ม.</li>
                             <li>มูลสัตว์ (25%): 0.6 × 0.25 = 0.15 ลบ.ม.</li>
                         </ol>
+                        <div style="margin-top: var(--space-16); padding: var(--space-12); background: rgba(33, 128, 141, 0.1); border-radius: var(--radius-base);">
+                            <p><strong>💡 ลองปรับค่า (ทำให้ยากขึ้น):</strong> ถ้ากองมีเส้นผ่านศูนย์กลาง 0.8 เมตร สูง 1.2 เมตร ให้คำนวณใหม่</p>
+                        </div>
                     </div>
                     
-                    <h3>ฝึกหัดที่ 2: การประมาณระยะเวลา</h3>
-                    <p>หากเริ่มต้นหมักเมื่อวันที่ 1 ตุลาคม จะสูงเสร็จสมบูรณ์เมื่อไร? (ถ้ากำหนดให้หมักตามปกติ 60 วัน)</p>
+                    <h3>📅 ฝึกหัดที่ 2: การคำนวณระยะเวลาและปฎิทิน</h3>
+                    <p><strong>โจทย์:</strong> หากเริ่มต้นหมักเมื่อวันที่ 1 ตุลาคม จะสุดเสร็จสมบูรณ์เมื่อไร? และแต่ละเฟสลงวันที่เท่าไร?</p>
                     <div style="background: rgba(255, 255, 255, 0.5); padding: var(--space-16); border-radius: var(--radius-base); margin: var(--space-12) 0;">
-                        <p><strong>คำตอบ:</strong> วันที่ 30 พฤศจิกายน (หลังจาก 60 วัน)</p>
+                        <p><strong>ตารางวางแผน:</strong></p>
+                        <table style="width: 100%; border-collapse: collapse; margin: var(--space-12) 0;">
+                            <tr style="background: rgba(33, 128, 141, 0.1);">
+                                <th style="border: 1px solid var(--color-border); padding: var(--space-8); text-align: left;">ระยะการหมัก</th>
+                                <th style="border: 1px solid var(--color-border); padding: var(--space-8); text-align: left;">ระยะเวลา</th>
+                                <th style="border: 1px solid var(--color-border); padding: var(--space-8); text-align: left;">วันเริ่มต้น</th>
+                                <th style="border: 1px solid var(--color-border); padding: var(--space-8); text-align: left;">วันสิ้นสุด</th>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8);">หมักร้อน</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8);">14-28 วัน</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8);">1 ต.ค.</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8);">28 ต.ค.</td>
+                            </tr>
+                            <tr style="background: rgba(255, 255, 255, 0.3);">
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8);">หมักเย็น</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8);">14-21 วัน</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8);">29 ต.ค.</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8);">19 พ.ย.</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8);">สุก/บ่มเพิ่มเติม</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8);">2-4 สัปดาห์</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8);">20 พ.ย.</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8);">30 พ.ย.</td>
+                            </tr>
+                        </table>
+                        <p><strong>คำตอบ:</strong> วันที่ 30 พฤศจิกายน (ประมาณ 60 วัน)</p>
+                    </div>
+                    
+                    <h3>💰 ฝึกหัดที่ 3: การคำนวณต้นทุนและผลประโยชน์</h3>
+                    <p><strong>โจทย์:</strong> หากซื้อปุ๋ยเคมี ราคา 200 บาท/กระสอบ (ได้ 10 กก.) และต้องการปุ๋ยประมาณ 50 กก. ต้นทุนจะเท่าไร? เมื่อเทียบกับการทำปุ๋ยหมักเองด้วย 5 กก. ขี้วัว (100 บาท) + 15 กก. ฟาง (50 บาท) + น้ำ (20 บาท)</p>
+                    <div style="background: rgba(255, 255, 255, 0.5); padding: var(--space-16); border-radius: var(--radius-base); margin: var(--space-12) 0;">
+                        <p><strong>การเปรียบเทียบต้นทุน:</strong></p>
+                        <table style="width: 100%; border-collapse: collapse; margin: var(--space-12) 0;">
+                            <tr style="background: rgba(33, 128, 141, 0.1);">
+                                <th style="border: 1px solid var(--color-border); padding: var(--space-8); text-align: left;">วิธี</th>
+                                <th style="border: 1px solid var(--color-border); padding: var(--space-8); text-align: right;">ปริมาณ</th>
+                                <th style="border: 1px solid var(--color-border); padding: var(--space-8); text-align: right;">ต้นทุน</th>
+                                <th style="border: 1px solid var(--color-border); padding: var(--space-8); text-align: right;">ต้นทุน/กก.</th>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8);">ปุ๋ยเคมี</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8); text-align: right;">50 กก.</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8); text-align: right;">1,000 บาท</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8); text-align: right;">20 บาท</td>
+                            </tr>
+                            <tr style="background: rgba(255, 255, 255, 0.3);">
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8);">ปุ๋ยหมัก</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8); text-align: right;">50 กก.</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8); text-align: right;">170 บาท</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8); text-align: right;">3.4 บาท</td>
+                            </tr>
+                        </table>
+                        <p><strong>สรุป:</strong> ประหยัดกว่า 83% (830 บาท) ✓</p>
+                    </div>
+                    
+                    <h3>🌡️ ฝึกหัดที่ 4: วิเคราะห์ข้อมูลอุณหภูมิ (Graphing)</h3>
+                    <p><strong>โจทย์:</strong> บันทึกอุณหภูมิปุ๋ยหมักตามข้อมูลด้านล่าง ให้วาดกราฟแนวโน้มและวิเคราะห์</p>
+                    <div style="background: rgba(255, 255, 255, 0.5); padding: var(--space-16); border-radius: var(--radius-base); margin: var(--space-12) 0;">
+                        <p><strong>ข้อมูลอุณหภูมิ (°C):</strong></p>
+                        <table style="width: 100%; border-collapse: collapse; margin: var(--space-12) 0;">
+                            <tr style="background: rgba(33, 128, 141, 0.1);">
+                                <th style="border: 1px solid var(--color-border); padding: var(--space-8);">สัปดาห์</th>
+                                <th style="border: 1px solid var(--color-border); padding: var(--space-8);">1</th>
+                                <th style="border: 1px solid var(--color-border); padding: var(--space-8);">2</th>
+                                <th style="border: 1px solid var(--color-border); padding: var(--space-8);">3</th>
+                                <th style="border: 1px solid var(--color-border); padding: var(--space-8);">4</th>
+                                <th style="border: 1px solid var(--color-border); padding: var(--space-8);">5</th>
+                                <th style="border: 1px solid var(--color-border); padding: var(--space-8);">6</th>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8); font-weight: 600;">อุณหภูมิ</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8);">35</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8);">65</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8);">70</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8);">55</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8);">40</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-8);">28</td>
+                            </tr>
+                        </table>
+                        <p><strong>คำถาม:</strong></p>
+                        <ul>
+                            <li>1. อุณหภูมิสูงสุดคือเท่าไร? (สัปดาห์ที่เท่าไร)</li>
+                            <li>2. ระยะการหมักร้อนดำเนินไปกี่สัปดาห์?</li>
+                            <li>3. สัปดาห์ที่เท่าไรเริ่มเข้าสู่ระยะหมักเย็น?</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -699,7 +910,7 @@
             <div id="quiz" class="content-section">
                 <div class="card">
                     <h2>📋 แบบทดสอบวัดความเข้าใจ</h2>
-                    <p style="color: var(--color-warning);"><strong>⚠️ คำสั่ง:</strong> เลือกคำตอบที่ถูกต้องที่สุดเพียงหนึ่งข้อ ทำครบทุกข้อแล้วคลิก "ส่งคำตอบ"</p>
+                    <p style="color: var(--color-warning);"><strong>⚠️ คำสั่ง:</strong> เลือกคำตอบที่ถูกต้องที่สุดเพียงหนึ่งข้อ ทำครบทุกข้อแล้วคลิก "ส่งคำตอบ" เพื่อตรวจประเมินอัตโนมัติ</p>
                     
                     <div class="quiz-question">
                         <div class="quiz-question-text">1. อัตราส่วนของเศษพืช : มูลสัตว์ ที่เหมาะสมสำหรับการทำปุ๋ยหมักแบบไม่พลิกกองคือ?</div>
@@ -711,7 +922,7 @@
                                 <input type="radio" name="q1"> ข. 2:1
                             </label>
                             <label class="quiz-option" onclick="selectQuizOption(this, 1, 2)">
-                                <input type="radio" name="q1"> ค. 3-4:1 ✓
+                                <input type="radio" name="q1"> ค. 3-4:1
                             </label>
                             <label class="quiz-option" onclick="selectQuizOption(this, 1, 3)">
                                 <input type="radio" name="q1"> ง. 5:1
@@ -729,7 +940,7 @@
                                 <input type="radio" name="q2"> ข. 45 วัน
                             </label>
                             <label class="quiz-option" onclick="selectQuizOption(this, 2, 2)">
-                                <input type="radio" name="q2"> ค. 60 วัน ✓
+                                <input type="radio" name="q2"> ค. 60 วัน
                             </label>
                             <label class="quiz-option" onclick="selectQuizOption(this, 2, 3)">
                                 <input type="radio" name="q2"> ง. 90 วัน
@@ -750,7 +961,7 @@
                                 <input type="radio" name="q3"> ค. ได้ปุ๋ยคุณภาพสูง
                             </label>
                             <label class="quiz-option" onclick="selectQuizOption(this, 3, 3)">
-                                <input type="radio" name="q3"> ง. ถูกทุกข้อ ✓
+                                <input type="radio" name="q3"> ง. ถูกทุกข้อ
                             </label>
                         </div>
                     </div>
@@ -762,7 +973,7 @@
                                 <input type="radio" name="q4"> ก. 30-40°C
                             </label>
                             <label class="quiz-option" onclick="selectQuizOption(this, 4, 1)">
-                                <input type="radio" name="q4"> ข. 60-70°C ✓
+                                <input type="radio" name="q4"> ข. 60-70°C
                             </label>
                             <label class="quiz-option" onclick="selectQuizOption(this, 4, 2)">
                                 <input type="radio" name="q4"> ค. 80-90°C
@@ -777,7 +988,7 @@
                         <div class="quiz-question-text">5. วัตถุดิบใดที่ไม่เหมาะสำหรับการทำปุ๋ยหมัก?</div>
                         <div class="quiz-options">
                             <label class="quiz-option" onclick="selectQuizOption(this, 5, 0)">
-                                <input type="radio" name="q5"> ก. เศษอาหารมีเนื้อสัตว์ ✓
+                                <input type="radio" name="q5"> ก. เศษอาหารมีเนื้อสัตว์
                             </label>
                             <label class="quiz-option" onclick="selectQuizOption(this, 5, 1)">
                                 <input type="radio" name="q5"> ข. ฟางข้าว
@@ -791,9 +1002,52 @@
                         </div>
                     </div>
                     
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">6. ข้อใดคือลักษณะของปุ๋ยหมักที่สิ้นสุดการหมัก?</div>
+                        <div class="quiz-options">
+                            <label class="quiz-option" onclick="selectQuizOption(this, 6, 0)">
+                                <input type="radio" name="q6"> ก. สีเหลืองอ่อน กลิ่นเหม็น
+                            </label>
+                            <label class="quiz-option" onclick="selectQuizOption(this, 6, 1)">
+                                <input type="radio" name="q6"> ข. สีน้ำตาลเข้มถึงดำ กลิ่นดินร่วน
+                            </label>
+                            <label class="quiz-option" onclick="selectQuizOption(this, 6, 2)">
+                                <input type="radio" name="q6"> ค. สีขาวอ่อน ไม่มีกลิ่น
+                            </label>
+                            <label class="quiz-option" onclick="selectQuizOption(this, 6, 3)">
+                                <input type="radio" name="q6"> ง. สีเขียว กลิ่นเหม็นแรง
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">7. วัตถุประสงค์หลักของการทำปุ๋ยหมักแบบไม่พลิกกองคือ?</div>
+                        <div class="quiz-options">
+                            <label class="quiz-option" onclick="selectQuizOption(this, 7, 0)">
+                                <input type="radio" name="q7"> ก. เพื่อทำให้กอง สูงชัน
+                            </label>
+                            <label class="quiz-option" onclick="selectQuizOption(this, 7, 1)">
+                                <input type="radio" name="q7"> ข. เพื่อลดแรงงาน เวลา และต้นทุน
+                            </label>
+                            <label class="quiz-option" onclick="selectQuizOption(this, 7, 2)">
+                                <input type="radio" name="q7"> ค. เพื่อให้กลิ่นดี
+                            </label>
+                            <label class="quiz-option" onclick="selectQuizOption(this, 7, 3)">
+                                <input type="radio" name="q7"> ง. เพื่อทำให้ปุ๋ยมีสีขึ้น
+                            </label>
+                        </div>
+                    </div>
+                    
                     <button class="btn btn-primary" style="width: 100%; margin-top: var(--space-20);" onclick="submitQuiz()">
-                        ✓ ส่งคำตอบ
+                        ✓ ส่งคำตอบและตรวจประเมิน
                     </button>
+                </div>
+                
+                <div id="quizFeedback" style="display: none; margin-top: var(--space-24);">
+                    <div class="card">
+                        <h2>📊 ผลการตรวจประเมิน</h2>
+                        <div id="detailedFeedback"></div>
+                    </div>
                 </div>
             </div>
             
@@ -812,32 +1066,98 @@
                         <div class="stat-label">คะแนนแบบทดสอบ</div>
                         <div class="stat-value" id="quizScore">-</div>
                     </div>
+                    <div class="dashboard-stat" style="background: linear-gradient(135deg, var(--color-success), #059669);">
+                        <div class="stat-label">รวมคะแนนทั้งหมด</div>
+                        <div class="stat-value" id="totalScore">-</div>
+                    </div>
                 </div>
                 
                 <div class="card">
-                    <h2>📊 ผลการประเมินผล</h2>
-                    <p style="color: var(--color-text-secondary);">บันทึกข้อมูลการเรียนรู้และความก้าวหน้าของนักเรียน</p>
+                    <h2>📊 แดชบอร์ดสรุปผลการประเมิน</h2>
+                    <p style="color: var(--color-text-secondary);">บันทึกข้อมูลการเรียนรู้ ความก้าวหน้า และผลการประเมินโดยละเอียด</p>
                     
-                    <h3>สรุปความก้าวหน้า</h3>
+                    <h3>📈 สรุปความก้าวหน้า (กิจกรรม)</h3>
                     <div class="progress-bar">
                         <div class="progress-fill" id="progressBar" style="width: 0%"></div>
                     </div>
-                    <p id="progressText" style="text-align: center; color: var(--color-text-secondary);">0 / 3 กิจกรรม</p>
+                    <p id="progressText" style="text-align: center; color: var(--color-text-secondary); font-weight: 600;">0 / 4 กิจกรรม</p>
                     
-                    <h3 style="margin-top: var(--space-24);">บันทึกกิจกรรมที่ทำเสร็จแล้ว</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--space-16); margin: var(--space-20) 0;">
+                        <div style="background: rgba(33, 128, 141, 0.1); padding: var(--space-16); border-radius: var(--radius-base); text-align: center;">
+                            <div style="font-size: 32px; margin-bottom: var(--space-8);" id="activity1Icon">❌</div>
+                            <div style="font-size: 12px; font-weight: 600; color: var(--color-text-secondary);">กิจกรรม 1</div>
+                            <div style="font-size: 10px; color: var(--color-text-secondary); margin-top: var(--space-4);" id="activity1Date">ยังไม่ทำ</div>
+                        </div>
+                        <div style="background: rgba(33, 128, 141, 0.1); padding: var(--space-16); border-radius: var(--radius-base); text-align: center;">
+                            <div style="font-size: 32px; margin-bottom: var(--space-8);" id="activity2Icon">❌</div>
+                            <div style="font-size: 12px; font-weight: 600; color: var(--color-text-secondary);">กิจกรรม 2</div>
+                            <div style="font-size: 10px; color: var(--color-text-secondary); margin-top: var(--space-4);" id="activity2Date">ยังไม่ทำ</div>
+                        </div>
+                        <div style="background: rgba(33, 128, 141, 0.1); padding: var(--space-16); border-radius: var(--radius-base); text-align: center;">
+                            <div style="font-size: 32px; margin-bottom: var(--space-8);" id="activity3Icon">❌</div>
+                            <div style="font-size: 12px; font-weight: 600; color: var(--color-text-secondary);">กิจกรรม 3</div>
+                            <div style="font-size: 10px; color: var(--color-text-secondary); margin-top: var(--space-4);" id="activity3Date">ยังไม่ทำ</div>
+                        </div>
+                        <div style="background: rgba(33, 128, 141, 0.1); padding: var(--space-16); border-radius: var(--radius-base); text-align: center;">
+                            <div style="font-size: 32px; margin-bottom: var(--space-8);" id="activity4Icon">❌</div>
+                            <div style="font-size: 12px; font-weight: 600; color: var(--color-text-secondary);">กิจกรรม 4</div>
+                            <div style="font-size: 10px; color: var(--color-text-secondary); margin-top: var(--space-4);" id="activity4Date">ยังไม่ทำ</div>
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin-top: var(--space-24);">📝 บันทึกกิจกรรมที่ทำเสร็จแล้ว</h3>
                     <div id="completedActivities" style="margin: var(--space-16) 0;"></div>
                     
-                    <h3 style="margin-top: var(--space-24);">ผลการสอบแบบทดสอบ</h3>
-                    <div id="quizResultsDisplay" style="text-align: center; padding: var(--space-20); background: rgba(33, 128, 141, 0.05); border-radius: var(--radius-lg); display: none;">
-                        <p style="color: var(--color-text-secondary); margin: 0 0 var(--space-12) 0;">คะแนนของคุณ</p>
+                    <h3 style="margin-top: var(--space-24);">📋 ผลการสอบแบบทดสอบ (7 ข้อ)</h3>
+                    <div id="quizResultsDisplay" style="text-align: center; padding: var(--space-20); background: linear-gradient(135deg, rgba(33, 128, 141, 0.1), rgba(230, 129, 97, 0.1)); border-radius: var(--radius-lg); display: none;">
+                        <p style="color: var(--color-text-secondary); margin: 0 0 var(--space-12) 0;">คะแนนแบบทดสอบ</p>
                         <div class="score-display" id="finalScore">-</div>
-                        <div id="gradeBadgeDisplay"></div>
+                        <div id="gradeBadgeDisplay" style="margin-top: var(--space-12)"></div>
+                        <div id="scoreDetails" style="margin-top: var(--space-16); text-align: left; background: white; padding: var(--space-16); border-radius: var(--radius-base);">
+                            <p style="margin: 0 0 var(--space-8) 0; color: var(--color-text-secondary);"><strong>🎯 รายละเอียด:</strong></p>
+                            <p style="margin: var(--space-4) 0; color: var(--color-text-secondary);"><span id="correctCount">0</span> ข้อถูก / <span id="wrongCount">0</span> ข้อผิด</p>
+                        </div>
                     </div>
-                    <p id="noQuizMessage" style="text-align: center; color: var(--color-text-secondary); padding: var(--space-16);">ยังไม่มีผลการสอบ (ทำแบบทดสอบเพื่อดูผลคะแนน)</p>
+                    <p id="noQuizMessage" style="text-align: center; color: var(--color-text-secondary); padding: var(--space-16); background: rgba(255, 255, 255, 0.3); border-radius: var(--radius-base);">⏳ ยังไม่ได้ทำแบบทดสอบ (ไปที่แท็บแบบทดสอบเพื่อเริ่มทำ)</p>
                     
-                    <h3 style="margin-top: var(--space-24);">ส่งออกรายงาน</h3>
-                    <p style="color: var(--color-text-secondary); font-size: 14px; margin-bottom: var(--space-16);">ดาวน์โหลดรายงานผลการประเมินเป็นไฟล์ PDF</p>
-                    <button class="btn btn-primary" onclick="generatePDF()">📥 ส่งออก PDF</button>
+                    <h3 style="margin-top: var(--space-24);">💯 สรุปคะแนนรวม</h3>
+                    <div style="background: linear-gradient(135deg, rgba(33, 128, 141, 0.15), rgba(230, 129, 97, 0.15)); padding: var(--space-20); border-radius: var(--radius-lg);">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tr style="background: rgba(33, 128, 141, 0.1);">
+                                <th style="border: 1px solid var(--color-border); padding: var(--space-12); text-align: left;">รายการประเมิน</th>
+                                <th style="border: 1px solid var(--color-border); padding: var(--space-12); text-align: right;">คะแนน</th>
+                                <th style="border: 1px solid var(--color-border); padding: var(--space-12); text-align: right;">ร้อยละ</th>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-12);">กิจกรรม (4 ชุด)</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-12); text-align: right;" id="activityScore">0/40</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-12); text-align: right;" id="activityPercent">0%</td>
+                            </tr>
+                            <tr style="background: rgba(255, 255, 255, 0.2);">
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-12);">แบบทดสอบ (7 ข้อ)</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-12); text-align: right;" id="quizScoreTable">0/60</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-12); text-align: right;" id="quizPercent">0%</td>
+                            </tr>
+                            <tr style="background: var(--color-teal-500); color: white; font-weight: 600;">
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-12);">รวมทั้งสิ้น</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-12); text-align: right;" id="totalScoreDisplay">0/100</td>
+                                <td style="border: 1px solid var(--color-border); padding: var(--space-12); text-align: right;" id="totalPercent">0%</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <h3 style="margin-top: var(--space-24);">🎓 การประเมินผล</h3>
+                    <div id="gradeDisplay" style="padding: var(--space-16); background: rgba(33, 128, 141, 0.05); border-radius: var(--radius-base); text-align: center; display: none;">
+                        <p style="color: var(--color-text-secondary); margin: 0 0 var(--space-8) 0;">ผลการประเมินโดยรวม</p>
+                        <div id="overallGradeBadge" style="font-size: 24px; font-weight: 700;"></div>
+                    </div>
+                    
+                    <h3 style="margin-top: var(--space-24);">📥 ส่งออกรายงาน</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 14px; margin-bottom: var(--space-16);">ดาวน์โหลดรายงานผลการประเมินโดยละเอียดเป็นไฟล์ TXT (นำไปแปลง PDF ได้)</p>
+                    <div style="display: flex; gap: var(--space-12); flex-wrap: wrap;">
+                        <button class="btn btn-primary" onclick="generatePDF()">📥 ส่งออก PDF</button>
+                        <button class="btn btn-secondary" onclick="printDashboard()">🖨️ พิมพ์รายงาน</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -861,11 +1181,13 @@
         };
         
         const quizAnswers = {
-            1: 2,
-            2: 2,
-            3: 3,
-            4: 1,
-            5: 0
+            1: 2,  // 3-4:1
+            2: 2,  // 60 วัน
+            3: 3,  // ถูกทุกข้อ
+            4: 1,  // 60-70°C
+            5: 0,  // เศษอาหารมีเนื้อสัตว์
+            6: 1,  // สีน้ำตาลเข้มถึงดำ
+            7: 1   // เพื่อลดแรงงาน เวลา และต้นทุน
         };
         
         // Login function
@@ -920,20 +1242,74 @@
             event.target.classList.add('active');
         }
         
-        // Mark activity as completed
-        function markActivity(activityId) {
+        // Submit activity data
+        function submitActivity(activityId) {
+            let data = {};
+            let activityName = '';
+            
+            if (activityId === 'activity1') {
+                activityName = 'กิจกรรมที่ 1: วางแผน';
+                data = {
+                    location: document.getElementById('activity1_location').value,
+                    volume: document.getElementById('activity1_volume').value
+                };
+                if (!data.location || !data.volume) {
+                    alert('⚠️ กรุณากรอกข้อมูลให้ครบ');
+                    return;
+                }
+            } else if (activityId === 'activity2') {
+                activityName = 'กิจกรรมที่ 2: ปฏิบัติการขึ้นกอง';
+                data = {
+                    notes: document.getElementById('activity2_notes').value,
+                    temp: document.getElementById('activity2_temp').value
+                };
+                if (!data.notes || !data.temp) {
+                    alert('⚠️ กรุณากรอกข้อมูลให้ครบ');
+                    return;
+                }
+            } else if (activityId === 'activity3') {
+                activityName = 'กิจกรรมที่ 3: ติดตามสัปดาห์';
+                const week = document.getElementById('activity3_week').value;
+                data = {
+                    week: week,
+                    temp: document.getElementById('activity3_temp').value,
+                    moisture: document.getElementById('activity3_moisture').value,
+                    smell: document.getElementById('activity3_smell').value,
+                    observation: document.getElementById('activity3_observation').value
+                };
+                if (!data.temp || !data.moisture || !data.smell || !data.observation) {
+                    alert('⚠️ กรุณากรอกข้อมูลให้ครบ');
+                    return;
+                }
+            } else if (activityId === 'activity4') {
+                activityName = 'กิจกรรมที่ 4: ประเมินคุณภาพ';
+                data = {
+                    color: document.getElementById('activity4_color').value,
+                    structure: document.getElementById('activity4_structure').value,
+                    smell2: document.getElementById('activity4_smell2').value,
+                    debris: document.getElementById('activity4_debris').value,
+                    summary: document.getElementById('activity4_summary').value
+                };
+                if (!data.color || !data.structure || !data.smell2 || !data.debris || !data.summary) {
+                    alert('⚠️ กรุณากรอกข้อมูลให้ครบ');
+                    return;
+                }
+            }
+            
             learningData.completedActivities[activityId] = {
                 completed: true,
-                date: new Date().toLocaleString('th-TH')
+                date: new Date().toLocaleString('th-TH'),
+                data: data,
+                name: activityName
             };
             
-            const button = event.target;
-            button.disabled = true;
-            button.style.opacity = '0.5';
-            button.parentElement.classList.add('completed');
-            
             updateDashboard();
-            alert('✓ บันทึกการทำเสร็จแล้ว');
+            alert(`✓ ${activityName} บันทึกข้อมูลสำเร็จแล้ว`);
+        }
+        
+        // Mark activity as completed (old function)
+        function markActivity(activityId) {
+            submitActivity(activityId);
         }
         
         // Select quiz option
@@ -944,61 +1320,144 @@
             learningData.quizAnswers[question] = index;
         }
         
-        // Submit quiz
+        // Submit quiz with answer key checking
         function submitQuiz() {
-            if (Object.keys(learningData.quizAnswers).length < 5) {
-                alert('⚠️ กรุณาตอบคำถามให้ครบทั้ง 5 ข้อ');
+            if (Object.keys(learningData.quizAnswers).length < 7) {
+                alert('⚠️ กรุณาตอบคำถามให้ครบทั้ง 7 ข้อ');
                 return;
             }
             
             let score = 0;
-            for (let q in quizAnswers) {
-                if (learningData.quizAnswers[q] === quizAnswers[q]) {
-                    score++;
-                }
-            }
+            let feedback = '<div style="text-align: left;">';
+            const correctAnswersKey = { 1: 2, 2: 2, 3: 3, 4: 1, 5: 0, 6: 1, 7: 1 };
+            const questionTexts = {
+                1: 'อัตราส่วน',
+                2: 'ระยะเวลา',
+                3: 'ข้อดี',
+                4: 'อุณหภูมิหมักร้อน',
+                5: 'วัตถุดิบไม่เหมาะ',
+                6: 'ลักษณะปุ๋ยสิ้นสุด',
+                7: 'วัตถุประสงค์หลัก'
+            };
             
-            learningData.quizScore = (score / 5) * 100;
+            for (let q in correctAnswersKey) {
+                const isCorrect = learningData.quizAnswers[q] === correctAnswersKey[q];
+                if (isCorrect) score++;
+                
+                const status = isCorrect ? '✅ ถูก' : '❌ ผิด';
+                feedback += `<div style="padding: var(--space-12); margin: var(--space-8) 0; background: ${isCorrect ? 'rgba(33,128,141,0.1)' : 'rgba(255,84,89,0.1)'}; border-radius: var(--radius-base); border-left: 4px solid ${isCorrect ? 'var(--color-success)' : 'var(--color-error)'};">
+                    <strong>ข้อที่ ${q}: ${questionTexts[q]}</strong> ${status}<br>
+                    <span style="font-size: 12px; color: var(--color-text-secondary);">คำตอบของคุณ: ${['ก', 'ข', 'ค', 'ง'][learningData.quizAnswers[q]] || 'ไม่ตอบ'}</span>
+                </div>`;
+            }
+            feedback += '</div>';
+            
+            learningData.quizScore = (score / 7) * 100;
             learningData.quizTaken = true;
             
             // Show results
             showQuizResults(score);
+            showDetailedFeedback(feedback);
             updateDashboard();
             
-            alert(`✓ ส่งคำตอบสำเร็จ! คุณได้ ${score} / 5 คะแนน`);
+            const gradeText = score >= 7 ? 'ยอดเยี่ยม' : score >= 6 ? 'ดี' : score >= 4 ? 'พอใจ' : 'ต้องปรับปรุง';
+            alert(`✓ ส่งคำตอบสำเร็จ!\n\nคะแนน: ${score} / 7 (${Math.round(learningData.quizScore)}%)\nผลการประเมิน: ${gradeText}`);
+        }
+        
+        // Show detailed feedback
+        function showDetailedFeedback(feedback) {
+            document.getElementById('detailedFeedback').innerHTML = feedback;
+            document.getElementById('quizFeedback').style.display = 'block';
         }
         
         // Show quiz results
         function showQuizResults(score) {
-            const gradeText = score >= 5 ? 'ยอดเยี่ยม' : score >= 4 ? 'ดี' : score >= 3 ? 'พอใจ' : 'ต้องปรับปรุง';
-            const gradeClass = score >= 5 ? 'excellent' : score >= 4 ? 'good' : score >= 3 ? 'fair' : 'poor';
+            const gradeText = score >= 7 ? 'ยอดเยี่ยม 🌟' : score >= 6 ? 'ดี 👍' : score >= 4 ? 'พอใจ' : 'ต้องปรับปรุง';
+            const gradeClass = score >= 7 ? 'excellent' : score >= 6 ? 'good' : score >= 4 ? 'fair' : 'poor';
             
-            document.getElementById('finalScore').textContent = `${score} / 5`;
+            document.getElementById('finalScore').textContent = `${score} / 7`;
             document.getElementById('gradeBadgeDisplay').innerHTML = `<div class="grade-badge ${gradeClass}">${gradeText}</div>`;
+            document.getElementById('correctCount').textContent = score;
+            document.getElementById('wrongCount').textContent = 7 - score;
             document.getElementById('quizResultsDisplay').style.display = 'block';
             document.getElementById('noQuizMessage').style.display = 'none';
         }
         
-        // Update dashboard
+        // Update dashboard with comprehensive calculations
         function updateDashboard() {
             const activitiesCompleted = Object.keys(learningData.completedActivities).length;
-            const progressPercent = Math.round((activitiesCompleted / 3) * 100);
+            const progressPercent = Math.round((activitiesCompleted / 4) * 100);
             
             document.getElementById('progressPercent').textContent = progressPercent + '%';
             document.getElementById('progressBar').style.width = progressPercent + '%';
-            document.getElementById('progressText').textContent = `${activitiesCompleted} / 3 กิจกรรม`;
+            document.getElementById('progressText').textContent = `${activitiesCompleted} / 4 กิจกรรม`;
             
+            // Update activity icons
+            for (let i = 1; i <= 4; i++) {
+                const activity = learningData.completedActivities[`activity${i}`];
+                const iconEl = document.getElementById(`activity${i}Icon`);
+                const dateEl = document.getElementById(`activity${i}Date`);
+                if (activity) {
+                    iconEl.textContent = '✅';
+                    dateEl.textContent = activity.date.split(' ')[0];
+                    dateEl.style.color = 'var(--color-success)';
+                } else {
+                    iconEl.textContent = '❌';
+                    dateEl.textContent = 'ยังไม่ทำ';
+                    dateEl.style.color = 'var(--color-text-secondary)';
+                }
+            }
+            
+            // Update quiz score
             if (learningData.quizTaken) {
                 document.getElementById('quizScore').textContent = Math.round(learningData.quizScore) + '%';
+            }
+            
+            // Calculate scores
+            const activityScore = (activitiesCompleted / 4) * 40;
+            const quizRawScore = learningData.quizTaken ? (Math.round(learningData.quizScore / (100/7)) * 10) : 0;
+            const totalScore = activityScore + quizRawScore;
+            const totalPercent = Math.round((totalScore / 100) * 100);
+            
+            document.getElementById('activityScore').textContent = `${Math.round(activityScore)}/40`;
+            document.getElementById('activityPercent').textContent = `${Math.round((activityScore / 40) * 100)}%`;
+            document.getElementById('quizScoreTable').textContent = `${Math.round(quizRawScore)}/60`;
+            document.getElementById('quizPercent').textContent = `${learningData.quizTaken ? Math.round(learningData.quizScore) : 0}%`;
+            document.getElementById('totalScoreDisplay').textContent = `${Math.round(totalScore)}/100`;
+            document.getElementById('totalPercent').textContent = `${totalPercent}%`;
+            document.getElementById('totalScore').textContent = Math.round(totalScore) + '%';
+            
+            // Show overall grade
+            let gradeText = '', gradeEmoji = '';
+            if (totalPercent >= 90) {
+                gradeText = 'ยอดเยี่ยม (A)';
+                gradeEmoji = '🌟';
+            } else if (totalPercent >= 80) {
+                gradeText = 'ดี (B)';
+                gradeEmoji = '👍';
+            } else if (totalPercent >= 70) {
+                gradeText = 'พอใจ (C)';
+                gradeEmoji = '✓';
+            } else if (totalPercent >= 60) {
+                gradeText = 'ผ่าน (D)';
+                gradeEmoji = '📝';
+            } else {
+                gradeText = 'ต้องปรับปรุง (F)';
+                gradeEmoji = '📚';
+            }
+            
+            if (totalPercent > 0) {
+                document.getElementById('gradeDisplay').style.display = 'block';
+                document.getElementById('overallGradeBadge').innerHTML = `${gradeEmoji} ${gradeText}`;
             }
             
             // Update completed activities list
             let html = '';
             for (let activity in learningData.completedActivities) {
-                const date = learningData.completedActivities[activity].date;
+                const info = learningData.completedActivities[activity];
                 html += `<div class="activity-item completed">
-                    <div class="activity-title">✓ ${activity.toUpperCase()}</div>
-                    <div class="activity-date">วันที่ทำเสร็จ: ${date}</div>
+                    <div class="activity-title">✓ ${info.name}</div>
+                    <div class="activity-date">วันที่ทำเสร็จ: ${info.date}</div>
                 </div>`;
             }
             document.getElementById('completedActivities').innerHTML = html || '<p style="color: var(--color-text-secondary);">ยังไม่มีกิจกรรมที่เสร็จแล้ว</p>';
@@ -1006,7 +1465,7 @@
             document.getElementById('learningStatus').textContent = progressPercent > 0 ? 'กำลังเรียน' : 'ยังไม่เริ่ม';
         }
         
-        // Generate PDF
+        // Generate PDF/TXT Report
         function generatePDF() {
             if (!userInfo.loggedIn) {
                 alert('⚠️ กรุณาลงชื่อเข้าใช้ก่อน');
@@ -1014,79 +1473,129 @@
             }
             
             const activitiesCompleted = Object.keys(learningData.completedActivities).length;
-            const progressPercent = Math.round((activitiesCompleted / 3) * 100);
+            const progressPercent = Math.round((activitiesCompleted / 4) * 100);
+            const activityScore = (activitiesCompleted / 4) * 40;
+            const quizRawScore = learningData.quizTaken ? (Math.round(learningData.quizScore / (100/7)) * 10) : 0;
+            const totalScore = activityScore + quizRawScore;
+            
+            let gradeText = '';
+            if (totalScore >= 90) gradeText = 'ยอดเยี่ยม (A)';
+            else if (totalScore >= 80) gradeText = 'ดี (B)';
+            else if (totalScore >= 70) gradeText = 'พอใจ (C)';
+            else if (totalScore >= 60) gradeText = 'ผ่าน (D)';
+            else gradeText = 'ต้องปรับปรุง (F)';
             
             let pdfContent = `
-LAPORAN HASIL PEMBELAJARAN
-ปุ๋ยหมักแบบไม่พลิกกองในวงตาข่าย
+╔═══════════════════════════════════════════════════════════════════╗
+║       รายงานผลการประเมินการเรียนรู้ปุ๋ยหมักแบบไม่พลิกกอง         ║
+║              (ระบบการเรียนรู้อิเล็กทรอนิกส์ E-Learning)            ║
+╚═══════════════════════════════════════════════════════════════════╝
 
-═══════════════════════════════════════════════════════════
+📋 ข้อมูลนักเรียน
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ชื่อ - นามสกุล     : ${userInfo.fullName}
+เลขที่นักเรียน     : ${userInfo.studentId}
+ชั้นเรียน          : ${userInfo.className}
+วันที่รายงาน       : ${learningData.timestamp}
+เลขประจำตัวประชาชน: _________________________________
 
-ข้อมูลนักเรียน:
-───────────────
-ชื่อ - นามสกุล: ${userInfo.fullName}
-เลขที่นักเรียน: ${userInfo.studentId}
-ชั้นเรียน: ${userInfo.className}
-วันที่รายงาน: ${learningData.timestamp}
+📊 สรุปผลการประเมินโดยละเอียด
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-═══════════════════════════════════════════════════════════
-
-สรุปผลการประเมิน:
-───────────────
-
-1. ความก้าวหน้าการเรียน
-   ▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░ ${progressPercent}%
-   (${activitiesCompleted} / 3 กิจกรรม)
-
-2. กิจกรรมที่ทำเสร็จแล้ว
+1️⃣ ความก้าวหน้าในกิจกรรม
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ความก้าวหน้า: ${progressPercent}% (${activitiesCompleted} / 4 กิจกรรม)
 `;
             
-            if (activitiesCompleted > 0) {
-                for (let activity in learningData.completedActivities) {
-                    const date = learningData.completedActivities[activity].date;
-                    pdfContent += `   ✓ ${activity.toUpperCase()} - ${date}\n`;
+            // Activity details
+            const activityNames = {
+                'activity1': 'กิจกรรมที่ 1: วางแผนและออกแบบระบบปุ๋ยหมัก',
+                'activity2': 'กิจกรรมที่ 2: ปฏิบัติการขึ้นกองปุ๋ยหมัก',
+                'activity3': 'กิจกรรมที่ 3: ติดตามและวิเคราะห์ข้อมูล',
+                'activity4': 'กิจกรรมที่ 4: วิเคราะห์คุณภาพปุ๋ยสำเร็จ'
+            };
+            
+            pdfContent += '\n   รายละเอียดกิจกรรม:\n';
+            for (let i = 1; i <= 4; i++) {
+                const activity = learningData.completedActivities[`activity${i}`];
+                if (activity) {
+                    pdfContent += `   ${i}. ✅ ${activityNames[`activity${i}`]}\n`;
+                    pdfContent += `      วันที่ทำเสร็จ: ${activity.date}\n`;
+                } else {
+                    pdfContent += `   ${i}. ❌ ${activityNames[`activity${i}`]} (ยังไม่ทำ)\n`;
                 }
-            } else {
-                pdfContent += `   (ยังไม่มีกิจกรรมที่เสร็จแล้ว)\n`;
             }
             
             pdfContent += `
-3. ผลการสอบแบบทดสอบ
+   คะแนนกิจกรรม: ${Math.round(activityScore)} / 40 คะแนน (${Math.round((activityScore/40)*100)}%)
+
+2️⃣ ผลการสอบแบบทดสอบ (7 ข้อ)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 `;
             
             if (learningData.quizTaken) {
-                const score = Math.round(learningData.quizScore);
-                const gradeText = score >= 100 ? 'ยอดเยี่ยม' : score >= 80 ? 'ดี' : score >= 60 ? 'พอใจ' : 'ต้องปรับปรุง';
-                pdfContent += `   คะแนน: ${score}%
-   เกรด: ${gradeText}
-   สถานะ: ผ่านการทดสอบ ✓
+                const quizScore = Math.round(learningData.quizScore);
+                const correctCount = Object.values(learningData.quizAnswers).reduce((count, answer, index) => {
+                    const key = { 1: 2, 2: 2, 3: 3, 4: 1, 5: 0, 6: 1, 7: 1 }[index + 1] || -1;
+                    return count + (answer === key ? 1 : 0);
+                }, 0);
+                
+                pdfContent += `   คะแนนสอบ: ${correctCount} / 7 ข้อ (${quizScore}%)
+   ข้อถูก: ${correctCount} ข้อ
+   ข้อผิด: ${7 - correctCount} ข้อ
+   สถานะ: ${quizScore >= 60 ? '✅ ผ่าน' : '❌ ไม่ผ่าน'}
+   คะแนนรวม: ${Math.round(quizRawScore)} / 60 คะแนน
 `;
             } else {
-                pdfContent += `   (ยังไม่ได้ทำแบบทดสอบ)\n`;
+                pdfContent += `   สถานะ: ❌ ยังไม่ได้ทำแบบทดสอบ\n   คะแนนรวม: 0 / 60 คะแนน\n`;
             }
             
             pdfContent += `
-═══════════════════════════════════════════════════════════
 
-หมายเหตุ:
-นักเรียนได้แสดงความสนใจและความเข้าใจในการเรียนรู้เรื่องปุ๋ยหมัก
-แบบไม่พลิกกองตามเกณฑ์การประเมินผล
+3️⃣ คะแนนรวมและเกรด
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ┌─────────────────────────┬──────────┬────────┐
+   │ รายการประเมิน          │ คะแนน    │ ร้อยละ │
+   ├─────────────────────────┼──────────┼────────┤
+   │ กิจกรรม (4 ชุด)        │ ${String(Math.round(activityScore)).padEnd(8)}│ ${String(Math.round((activityScore/40)*100)).padEnd(6)}│
+   │ แบบทดสอบ (7 ข้อ)      │ ${String(Math.round(quizRawScore)).padEnd(8)}│ ${String(learningData.quizTaken ? Math.round(learningData.quizScore) : 0).padEnd(6)}│
+   ├─────────────────────────┼──────────┼────────┤
+   │ รวมทั้งสิ้น             │ ${String(Math.round(totalScore)).padEnd(8)}│ ${String(Math.round((totalScore/100)*100)).padEnd(6)}│
+   └─────────────────────────┴──────────┴────────┘
+   
+   ผลการประเมินโดยรวม: ${gradeText}
 
-═══════════════════════════════════════════════════════════
-รับรองโดย: ครูผู้สอน  นายสัญญา  นาคเจือ
+📝 ข้อเสนอแนะและหมายเหตุ
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• นักเรียนได้แสดงความสนใจและความเข้าใจในการเรียนรู้เรื่องปุ๋ยหมัก
+• เข้าร่วมกิจกรรมอย่างสม่ำเสมอและให้ความร่วมมือสูง
+• มีความเข้าใจหลักการและวิธีการทำปุ๋ยหมักแบบไม่พลิกกอง
+• สามารถนำความรู้ไปประยุกต์ใช้ในชีวิตจริงได้
+
+┌─────────────────────────────────────────────────────────────────┐
+│ ลายมือชื่อครูผู้สอน: _________________ วันที่: ________________│
+│ ลายมือชื่อผู้ปกครอง: _________________ วันที่: ________________│
+└─────────────────────────────────────────────────────────────────┘
+
+เอกสารนี้ได้รับการสร้างจากระบบการเรียนรู้อิเล็กทรอนิกส์
 วันที่พิมพ์: ${new Date().toLocaleDateString('th-TH', {year: 'numeric', month: 'long', day: 'numeric'})}
 `;
             
             // Create blob and download
             const element = document.createElement('a');
-            const file = new Blob([pdfContent], {type: 'text/plain'});
+            const file = new Blob([pdfContent], {type: 'text/plain;charset=utf-8'});
             element.href = URL.createObjectURL(file);
             element.download = `Report_${userInfo.studentId}_${userInfo.fullName.replace(/\s+/g, '_')}.txt`;
             document.body.appendChild(element);
             element.click();
             document.body.removeChild(element);
             
-            alert('✓ ดาวน์โหลดรายงานสำเร็จ');
+            alert('✓ ดาวน์โหลดรายงานสำเร็จ\n(เปิดด้วย Word หรือแปลงเป็น PDF ได้)');
+        }
+        
+        // Print dashboard
+        function printDashboard() {
+            window.print();
         }
     </script>
 </body>
